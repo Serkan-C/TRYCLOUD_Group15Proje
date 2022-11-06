@@ -1,4 +1,4 @@
-package com.tryCloud.step_definitions;
+package com.tryCloud.runners;
 
 
 import io.cucumber.junit.Cucumber;
