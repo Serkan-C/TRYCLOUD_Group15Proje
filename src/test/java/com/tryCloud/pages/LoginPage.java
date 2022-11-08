@@ -12,8 +12,9 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 public void login(){
+        Driver.getDriver().get("https://qa.trycloud.net");
         userInputBox.sendKeys(ConfigurationReader.getProperty("username"));
-        userInputBox.sendKeys(ConfigurationReader.getProperty("password"));
+        passwordInputBox.sendKeys(ConfigurationReader.getProperty("password"));
         loginButton.click();
 
 }
