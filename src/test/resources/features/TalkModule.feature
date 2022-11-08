@@ -5,7 +5,7 @@ Feature: Talk Module
     Given the user is logged in
     Given the user navigate the Talk Module and click
 
-    Scenario Outline:
+    Scenario: User can create a new conversation
       When user click the Plus icon
       And user enter a conversation "cydeo2" and click  add participant
       Then user add user from list and click Create conversation Button
