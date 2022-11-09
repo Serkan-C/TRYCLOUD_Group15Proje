@@ -24,11 +24,11 @@ Feature: Deck Module Functionality
     And user clicks on confirm add list button
     Then "<new list name>" should be displayed on the selected "<board>"
     Examples:
-      | board     |new list name|
-      | test 1    |list1|
-      | test 1    |list 2|
-      | 2test     |3th List|
-      | 2test     |%th _(List)|
-      | test &/%$ |List5|
-      | test &/%$ |List5|
+      | board     | new list name |
+      | test 1    | list1         |
+      | test 1    | list 2        |
+      | 2test     | 3th List      |
+      | 2test     | %th _(List)   |
+      | test &/%$ | List5         |
+      | test &/%$ | List5         |
 
