@@ -13,10 +13,7 @@ public class DashboardFuncStepDefinitions {
 
     DashboardPage dashboardPage = new DashboardPage();
 
-    @Given("the user is logged in")
-    public void the_user_is_logged_in(){
-        new LoginPage().login();
-    }
+
 
     @When("User access the dashboard successfully")
     public void user_access_the_dashboard_successfully() { //1
