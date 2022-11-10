@@ -21,7 +21,7 @@ public class DeckPage {
     public WebElement addBoardButton;
 
     @FindBy(xpath = "//*[@class='icon-confirm']")
-    public WebElement confirmButton;
+    public WebElement confirmNewBoard;
 
 
     @FindBy(xpath = "(//*[@class='icon-confirm']/../input)[1]")
@@ -38,4 +38,6 @@ public class DeckPage {
 
     @FindBy(xpath = "//*[@id='stack-add']//*[@type='submit']")
     public WebElement confirmAddListButton;
+
+
 }
