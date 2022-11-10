@@ -38,4 +38,24 @@ public class TalkModulePage {
     @FindBy(xpath = "//*[@id=\"app-sidebar\"]/header/div/div/div[2]/h2")
     public WebElement conversationName;
 
+
+
+    @FindBy(xpath = "//*[@id=\"conversation_2zfcwghf\"]/div[2]/div[1]/span[1]")
+    public WebElement cydeo2Conversation;
+
+    @FindBy(xpath = "//*[@id=\"participants\"]")
+    public WebElement paricipantIcon;
+
+
+    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/form/input")
+    public WebElement addParticipantInputbox;
+
+    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div[2]/div/ul/li/div[2]/div/span")
+    public WebElement participantEmployee100;
+
+    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div/ul/li[4]/div[2]/div/span")
+    public WebElement addedParticipantEmployee100;
+
+
+
 }
