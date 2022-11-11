@@ -70,7 +70,6 @@ public class ButtonGenerator {
                 break;
             case "Start Call":
                 talkModulePage.startCallButton.click();
-
                 break;
             case "cydeo2":
                 String xpathName="//span[contains(.,'"+buttonName+"')]";
