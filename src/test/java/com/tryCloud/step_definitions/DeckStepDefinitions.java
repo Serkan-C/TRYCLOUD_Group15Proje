@@ -57,9 +57,21 @@ public class DeckStepDefinitions {
         Assert.assertTrue(true);
 
     }
+    @And("user clicks on add card button next to {string} and write a {string}")
+    public void userClicksOnAddCardButtonNextToAndWriteA(String arg0, String arg1) {
+        Driver.getDriver().findElement(By.xpath("//*[contains(text(),\'"+arg0+"\')]/..//*[text()='Add card']/../../../..")).click();
+        Driver.getDriver().findElement(By.xpath("//*[contains(text(),\'"+arg0+"\')]/../..//input[@type='text']")).sendKeys(arg1);
+    }
 
-    @And("user clicks on add card button next to {string}")
-    public void userClicksOnAddCardButtonNextTo(String arg0) {
-Driver.getDriver().findElement(By.xpath("//*[text()='"+arg0+"']/..//*[text()='Add card']"));
+    @And("user clicks on confirm add card button next to the {string} input box")
+    public void userClicksOnConfirmAddCardButtonNextToTheInputBox(String arg0) {
+        Driver.getDriver().findElement(By.xpath("//*[contains(text(),\'"+arg0+"\')]/../..//input[@type='submit']")).click();
+    }
+
+    @Then("{string} should be displayed under the selected {string}")
+    public void shouldBeDisplayedUnderTheSelected(String arg0, String arg1) {
+        String xpath0 = "//*[contains(text(),\'"+arg0+"\')]/";
+        WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
+
     }
 }
