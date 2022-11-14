@@ -1,5 +1,6 @@
 package com.tryCloud.utilities;
 
+import com.tryCloud.pages.ContactsPage;
 import com.tryCloud.pages.DashboardPage;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
@@ -14,6 +15,8 @@ public class ButtonGenerator {
     public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
 
+    public static  ContactsPage contactsPage;
+
     public static void setObject() {
 
         if (loginPage == null) {
@@ -25,6 +28,9 @@ public class ButtonGenerator {
         if (dashboardPage == null) {
             dashboardPage = new DashboardPage();
         }
+        if(contactsPage == null){
+            contactsPage = new ContactsPage();
+        }
 
     }
 
@@ -32,6 +38,7 @@ public class ButtonGenerator {
         loginPage = null;
         talkModulePage = null;
         dashboardPage = null;
+        contactsPage = null;
 
     }
 
@@ -82,6 +89,14 @@ public class ButtonGenerator {
             case "Leave Call":
                 talkModulePage.leaveCallButton.click();
                 break;
+
+
+                //----------------Followings are furkan' locators
+            case"NewContacts_button":
+                contactsPage.NewContacts_button.click();
+                break;
+
+                //----------------furkan's codes are above
 
         }
 
