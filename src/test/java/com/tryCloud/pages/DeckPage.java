@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DeckPage {
+public class DeckPage extends BasePage{
 
-    public DeckPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy(xpath = "//ul[@id ='appmenu']//li[@data-id='deck']")
     public WebElement decksIcon;
@@ -24,10 +22,10 @@ public class DeckPage {
     public WebElement confirmNewBoard;
 
 
-    @FindBy(xpath = "(//*[@class='icon-confirm']/../input)[1]")
+    @FindBy(xpath = "//*[@*='text']")
     public WebElement inputAddBoard;
 
-    @FindBy(xpath = "//h2")
+    @FindBy(xpath = "//*[@*='board-title']//h2")
     public WebElement boardTitle;
 
     @FindBy(xpath = "//*[@id='stack-add']")
@@ -39,5 +37,21 @@ public class DeckPage {
     @FindBy(xpath = "//*[@id='stack-add']//*[@type='submit']")
     public WebElement confirmAddListButton;
 
+    @FindBy(xpath = "//*[text()='Assign to me']")
+    public WebElement assignToMeButton;
 
+    @FindBy(xpath = "//*[text()='Move card']")
+    public WebElement moveCardButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Select a board')]/..")
+    public WebElement selectAboard;
+
+    @FindBy(xpath = "//*[contains(text(),'Select a list')]/..")
+    public WebElement selectAlist;
+
+    @FindBy(xpath = "//button[contains(.,'Move card')]")
+    public WebElement confirmMoveCardButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Assign a tag to this card…')]/..")
+    public WebElement inputBoxTag;
 }
