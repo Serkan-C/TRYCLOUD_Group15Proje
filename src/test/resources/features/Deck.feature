@@ -56,7 +56,7 @@ Feature: Deck Module Functionality
       | 2test     | %th _(List) | ?? card     |
       | test4     | test4       | test4       |
 
-
+  @Deck
   Scenario Outline: User can assign any card/task to himself/herself by using the three dots on the related card
     When "<board>" is selected
     And user clicks on three dots button inside "<card name>" under "<list>"
@@ -93,7 +93,7 @@ Feature: Deck Module Functionality
       | test &/%$ | List5       | card5       | test 1            | list 2           |
       | test 1    | list1       | card 6      | 2test             | 3th List         |
 
-  @Deck
+
   Scenario Outline:User can assign any tag to any card/task
     When "<board>" is selected
     And user clicks on "<card name>" under "<list>"

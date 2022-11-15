@@ -12,7 +12,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 
-
 public class DeckStepDefinitions {
 
     DeckPage deckPage = new DeckPage();
@@ -72,11 +71,11 @@ public class DeckStepDefinitions {
 
     @And("user clicks on add card button next to {string} and write a {string}")
     public void userClicksOnAddCardButtonNextToAndWriteA(String arg0, String arg1) {
-        String xpath1="//*[contains(text(),'" + arg0 + "')]/..//*[text()='Add card']/../../../..";
+        String xpath1 = "//*[contains(text(),'" + arg0 + "')]/..//*[text()='Add card']/../../../..";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath1));
         webElement.click();
 
-        String xpath2="//*[contains(text(),'" + arg0 + "')]/../..//input[@type='text']";
+        String xpath2 = "//*[contains(text(),'" + arg0 + "')]/../..//input[@type='text']";
         webElement = Driver.getDriver().findElement(By.xpath(xpath2));
         webElement.sendKeys(arg1);
 
@@ -84,24 +83,24 @@ public class DeckStepDefinitions {
 
     @And("user clicks on confirm add card button next to the {string} input box")
     public void userClicksOnConfirmAddCardButtonNextToTheInputBox(String arg0) {
-        String xpath="//*[contains(text(),'" + arg0 + "')]/../..//input[@type='submit']";
+        String xpath = "//*[contains(text(),'" + arg0 + "')]/../..//input[@type='submit']";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath));
         webElement.click();
     }
 
     @Then("{string} should be displayed under the selected {string}")
     public void shouldBeDisplayedUnderTheSelected(String arg0, String arg1) {
-
+Driver.getDriver().navigate().refresh();
         String xpath0 = "//*[contains(text(),'" + arg1 + "')]/../..//*[contains(text(),'" + arg0 + "')]";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
         Assert.assertTrue(webElement.isDisplayed());
-
     }
 
 
     @And("user clicks on three dots button inside {string} under {string}")
     public void userClicksOnThreeDotsButtonInsideUnder(String arg0, String arg1) {
-        String xpath0 = "//*[contains(text(),'" + arg1 + "')]/../..//*[contains(text(),'" + arg0 + "')]/../../..//button";
+        String xpath0 = "//h3[contains(text(),'" + arg1 + "')]/../..//span[contains(text(),'" + arg0 + "')]/../../..//button";
+        System.out.println("xpath0 = " + xpath0);
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
         webElement.click();
 
@@ -134,29 +133,30 @@ public class DeckStepDefinitions {
     }
 
     public static String etwas;
+
     @And("user chooses a {string} from the tag-list")
     public void userChoosesAFromTheTagList(String arg0) {
         System.out.println("arg0 = " + arg0);
         if (arg0.equals("tagGenerator")) {
-            int randomNumber = Faker.instance().number().numberBetween(1,4);
+            int randomNumber = Faker.instance().number().numberBetween(1, 4);
             System.out.println("randomNumber = " + randomNumber);
             switch (randomNumber) {
                 case (1):
                     etwas = "Action needed";
                     break;
-                case(2):
-                    etwas="Finished";
+                case (2):
+                    etwas = "Finished";
                     break;
-                case(3):
-                    etwas="Later";
+                case (3):
+                    etwas = "Later";
                     break;
-                case(4):
-                    etwas="To review";
+                case (4):
+                    etwas = "To review";
                     break;
             }
             System.out.println("etwas = " + etwas);
         }
-        String xpath0 = "//span[contains(text(),'" + etwas + "')]";
+        String xpath0 = "//*[contains(@class,'multiselect__element')]//*[contains(text(),'" + etwas + "')]";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
         webElement.click();
 
@@ -165,7 +165,7 @@ public class DeckStepDefinitions {
 
     @Then("{string} should display inside the {string} under {string}")
     public void shouldDisplayInsideTheUnder(String arg0, String arg1, String arg2) {
-        arg0=etwas;
+        arg0 = etwas;
         System.out.println("arg0 = " + arg0);
         String xpath0 = "//*[contains(text(),'" + arg2 + "')]/../..//*[contains(text(),'" + arg1 + "')]/../../..//*[contains(text(),'" + arg0 + "')]";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
