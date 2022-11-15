@@ -5,11 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TalkModulePage {
-    public TalkModulePage() {
+public class TalkModulePage extends BasePage {
 
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     @FindBy(xpath = "//*[@id=\"appmenu\"]/li[5]")
     public WebElement TalkIcon;
@@ -45,17 +42,34 @@ public class TalkModulePage {
 
     @FindBy(xpath = "//*[@id=\"participants\"]")
     public WebElement paricipantIcon;
-
+@FindBy (xpath = "//*[@class='set-contacts__input']")
+public WebElement searchParticipant;
 
     @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/form/input")
     public WebElement addParticipantInputbox;
 
     @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div[2]/div/ul/li/div[2]/div/span")
     public WebElement participantEmployee100;
-
-    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div/ul/li[4]/div[2]/div/span")
+    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div/ul/li[7]/div[2]/div/span")
     public WebElement addedParticipantEmployee100;
 
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/a")
+    public WebElement menuButton;
+//*[@id="app-content-vue"]/div/div[1]/button
 
+    @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[1]/button")
+    public WebElement startCallButton;
+
+    @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[1]/button")
+    public WebElement leaveCallButton;
+
+    @FindBy(xpath = "//span[contains(.,'Delete conversation')]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//div[@class='oc-dialog-buttonrow twobuttons']/button[2]")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//span[contains(.,'Promote to moderator')]")
+    public WebElement promoteModerator;
 
 }

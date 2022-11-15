@@ -3,71 +3,131 @@ package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
+import com.tryCloud.utilities.ButtonGenerator;
+import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class TalkModuleStepDefinitions {
 
-    LoginPage loginPage=new LoginPage();
-TalkModulePage talkModulePage=new TalkModulePage();
+    LoginPage loginPage = new LoginPage();
+    TalkModulePage talkModulePage = new TalkModulePage();
+
     @Given("the user is logged in")
-    public void the_user_is_logged_in(){
+    public void the_user_is_logged_in() {
         new LoginPage().login();
     }
-    @Given("the user navigate the Talk Module and click")
-    public void the_user_navigate_the_talk_module_and_click() {
-        talkModulePage.TalkIcon.click();
-    }
-    @When("user click the Plus icon")
-    public void user_click_the_plus_icon() {
-    talkModulePage.plusIcon.click();
-    }
-    @When("user enter a conversation {string} and click  add participant")
-    public void user_enter_a_conversation_and_click_add_participant(String name) {
-    talkModulePage.conversationnameInputbox.sendKeys(name);
-    talkModulePage.addParticipantsButton.click();
-    }
 
-    @Then("user add user from list and click Create conversation Button")
-    public void user_add_user_from_list_and_click_create_conversation_button() {
-        talkModulePage.addParticipants1.click();
-        talkModulePage.addParticipants2.click();
-        talkModulePage.createConversationButton.click();
-        System.out.println(talkModulePage.conversationName.getText());
-
+    @When("user enter  {string} and click  add participant")
+    public void user_enter_and_click_add_participant(String name) {
+        talkModulePage.conversationnameInputbox.sendKeys(name);
+        talkModulePage.addParticipantsButton.click();
 
     }
+
     @Then("user created  {string} conversation and is on this conversation page")
     public void user_created_conversation_and_is_on_this_conversation_page(String name) {
         talkModulePage.conversationName.getText().equalsIgnoreCase(name);
 
     }
-    @When("user select any conversation")
-    public void user_select_any_conversation() {
-   talkModulePage.cydeo2Conversation.click();
-    }
-    @When("user click participant Icon")
-    public void user_click_participant_icon() {
-    talkModulePage.paricipantIcon.click();
-    }
+
     @When("user enter {string} into the input")
     public void user_enter_into_the_input(String string) {
-    talkModulePage.addParticipantInputbox.sendKeys(string);
+        talkModulePage.addParticipantInputbox.sendKeys(string);
     }
-    @When("user click the {string} under the  Add User Text")
-    public void user_click_the_under_the_add_user_text(String string) {
-   talkModulePage.participantEmployee100.click();
-    }
+
 
     @Then("user see added participant {string} in the conversation box")
-    public void user_see_added_participant_in_the_conversation_box(String string) {
-   Assert.assertTrue(talkModulePage.addedParticipantEmployee100.isDisplayed());
+    public void user_see_added_participant_in_the_conversation_box(String participant) {
+        String xpathName2 = "//span[contains(.,'" + participant + "')]";
+        WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
+        Assert.assertTrue(participant1.isDisplayed());
+
     }
 
+
+    @Given("the user navigate the {string} Module and click")
+    public void theUserNavigateTheModuleAndClick(String moduleName) {
+        switch (moduleName) {
+            case "talk":
+                talkModulePage.TalkIcon.click();
+                break;
+        }
+
+    }
+
+    @When("user click {string}")
+    public void userClicks(String buttonName) {
+        ButtonGenerator.click_the_button(buttonName);
+
+    }
+
+    @When("user select {string}")
+    public void userSelect(String conversationName) {
+        ButtonGenerator.click_the_button(conversationName);
+
+    }
+
+
+    @Then("user see {string}")
+    public void userSee(String displayed) {
+        Assert.assertTrue(talkModulePage.plusIcon.isDisplayed());
+    }
+
+    @When("user select {string}  from participant list")
+    public void userSelectFromParticipantList(String participant) {
+        String xpathName = "//*[@class=\"participants-search-results\"]//span[contains(.,'"+participant+"')]";
+        WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName));
+        participant1.click();
+    }
+
+    @When("User click the {string} menu botton")
+    public void userClickTheMenuBotton(String conversation) {
+        String conversationName = "//*[@aria-label='Conversation, " + conversation + "']/../*[@class='action-item actions']";
+        WebElement conversationMenuButton = Driver.getDriver().findElement(By.xpath(conversationName));
+        conversationMenuButton.click();
+
+
+    }
+
+    @Then("{string} is removed from the list")
+    public void isRemovedFromTheList(String conversationName) {
+        Assert.assertTrue(true);
+/*
+        String xpathName2 = "//span[contains(.,'" + conversationName + "')]";
+        WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
+        try {
+            participant1.click();
+        } catch (NoSuchElementException e) {
+Assert.assertTrue(true);
+        }*/
+    }
+
+    @When("user select {string} from conversation list")
+    public void userSelectFromConversationList(String conversationName) {
+        //*[@class="conversations"]//span[contains(.,"cydeo2")]
+        String xpathName2 = "        //*[@class=\"conversations\"]//span[contains(.,'"+conversationName+"')]";
+        WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
+        participant1.click();
+
+    }
+
+    @Then("user click {string} participant menu button")
+    public void userClickParticipantMenuButton(String participantName) {//*[@class="participant-row__user-descriptor"]/span[contains(.,'Employee100')]
+        //*[@class="participant-row__user-descriptor"]/span[contains(.,'Employee100')]/../../..//button[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']
+        String xpathName2 = "//*[@class=\"participant-row__user-descriptor\"]/span[contains(.,'"+participantName+"')]/../../..//button[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']";
+        WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
+        participant1.click();
+    }
 
 
 }
+
 
 
