@@ -1,6 +1,6 @@
 Feature: Upload/Edit/Delete File Module Functionality
 
-  Background: User is in the Dashboard page
+  Background: the user is logged in
     Given User is in the Dashboard
     And User Select Files Module from Dashboard
 
