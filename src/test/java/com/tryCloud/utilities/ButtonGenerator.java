@@ -5,6 +5,7 @@ import com.tryCloud.pages.DashboardPage;
 import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
+import com.tryCloud.pages.DeckPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -12,6 +13,8 @@ import org.openqa.selenium.support.ui.Wait;
 
 public class ButtonGenerator {
 
+
+public static DeckPage deckPage;
     public static LoginPage loginPage;
     public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
@@ -38,7 +41,9 @@ public class ButtonGenerator {
         if (fileModulePage == null) {
             fileModulePage = new FileModulePage();
         }
-
+        if (deckPage == null) {
+            deckPage = new DeckPage();
+        }
 
 
     }
@@ -48,6 +53,7 @@ public class ButtonGenerator {
         talkModulePage = null;
         dashboardPage = null;
         contactsPage = null;
+        deckPage = null;
 
     }
 
@@ -118,6 +124,43 @@ public class ButtonGenerator {
                 break;
             case "New folder":
                 fileModulePage.creatNewFolderBtn.click();
+                break;
+//-------------------------------Deckpage-----------------------------------------------
+            case "the app-deck navigation":
+                deckPage.app_deck_navigation_button.click();
+                break;
+            case "add board":
+                deckPage.addBoardButton.click();
+                break;
+            case "confirm new board":
+                deckPage.confirmNewBoard.click();
+                break;
+            case "on the Decks":
+                deckPage.decksIcon.click();
+                break;
+            case "confirm add list":
+                deckPage.confirmAddListButton.click();
+                break;
+            case "add list":
+                deckPage.addListButton.click();
+                break;
+            case "assign to me":
+                deckPage.assignToMeButton.click();
+                break;
+            case "Move card":
+                deckPage.moveCardButton.click();
+                break;
+            case "Select a board":
+                deckPage.selectAboard.click();
+                break;
+            case "Select a list":
+                deckPage.selectAlist.click();
+                break;
+            case "confirm move card":
+                deckPage.confirmMoveCardButton.click();
+                break;
+            case "Assign a tag to this card...":
+                deckPage.inputBoxTag.click();
                 break;
 
 
