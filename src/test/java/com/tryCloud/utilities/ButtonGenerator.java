@@ -78,16 +78,18 @@ public class ButtonGenerator {
             case "Start Call":
                 talkModulePage.startCallButton.click();
                 break;
-            case "cydeo2":
-                String xpathName="//span[contains(.,'"+buttonName+"')]";
-                WebElement conversationName=Driver.getDriver().findElement(By.xpath(xpathName));
-                conversationName.click();
-                break;
-            case "Employee103":
-                talkModulePage.participantEmployee100.click();
-                break;
+
             case "Leave Call":
                 talkModulePage.leaveCallButton.click();
+                break;
+            case "Delete Button":
+                talkModulePage.deleteButton.click();
+                break;
+            case "Yes Button":
+                talkModulePage.yesButton.click();
+                break;
+            case "Promote to Moderator Button":
+                talkModulePage.promoteModerator.click();
                 break;
 
 

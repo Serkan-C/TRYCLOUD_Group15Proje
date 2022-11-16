@@ -1,35 +1,75 @@
-@mywip
+@TCLOUD-876
 Feature: Talk Module Functionality
 
   Background:
     Given the user is logged in
+
   @TCLOUD-856
-  Scenario: User can create a new conversation
+  Scenario Outline: User can create a new conversation
     Given the user navigate the "talk" Module and click
     When user click "Plus Icon"
-    And user enter a conversation "cydeo3" and click  add participant
-    Then user add "User" from list
+    And user enter  "<conversation>" and click  add participant
     When user click "Create Conversation"
-    Then user created  "cydeo3" conversation and is on this conversation page
+    Then user created  "<conversation>" conversation and is on this conversation page
+    Examples:
+      | conversation |
+      | deneme1      |
+      | deneme2      |
+
   @TCLOUD-865
-  Scenario: User can add any selected participant to any conversation
+  Scenario Outline: User can add any selected participant to any conversation
     Given the user navigate the "talk" Module and click
-    When user select "cydeo2"
+    When user select "<conversation>" from conversation list
     When user click "participant Icon"
-    When user enter "Employee103" into the input
-    When user click "Employee103"
-    Then user see added participant "Employee103" in the conversation box
+    When user enter "<participant>" into the input
+    When user select "<participant>"  from participant list
+    Then user see added participant "<participant>" in the conversation box
+    Examples:
+      | conversation | participant |
+      | cydeo3       | Employee104 |
+
+  @TCLOUD-868
   Scenario: Display all conversation list under the Talk module
     Given the user navigate the "talk" Module and click
     When user click "Menu Button"
     Then user see "all conversation"
 
-  Scenario: User can start a call with any participant and leave the call
+  @TCLOUD-870
+  Scenario Outline: User can start a call with any participant and leave the call
     Given the user navigate the "talk" Module and click
     When user select "Menu Button"
-    When user select "cydeo2"
+    When user select "<conversation>" from conversation list
     When user click "Start Call"
     When user click "Leave Call"
+    Examples:
+      | conversation |
+      | cydeo2       |
+
+
+  @TCLOUD-873
+  Scenario Outline: User can delete a conversation
+    Given the user navigate the "talk" Module and click
+    When User click the "<conversation>" menu botton
+    When user click "Delete Button"
+    When user click "Yes Button"
+    Then "<conversation>" is removed from the list
+
+    Examples:
+      | conversation |
+      | deneme1      |
+      | deneme2      |
+
+@TCLOUD-875 @mywip
+  Scenario Outline: User can promote any participant to moderator
+    Given the user navigate the "talk" Module and click
+    When user select "<conversation>" from conversation list
+    When user click "participant Icon"
+    Then user click "<participant>" participant menu button
+    Then user click "Promote to Moderator Button"
+
+    Examples:
+      | conversation | participant |
+      | cydeo1       | Employee102 |
 
 
 

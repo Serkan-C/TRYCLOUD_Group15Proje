@@ -42,7 +42,8 @@ public class TalkModulePage extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"participants\"]")
     public WebElement paricipantIcon;
-
+@FindBy (xpath = "//*[@class='set-contacts__input']")
+public WebElement searchParticipant;
 
     @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/form/input")
     public WebElement addParticipantInputbox;
@@ -61,5 +62,14 @@ public class TalkModulePage extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[1]/button")
     public WebElement leaveCallButton;
+
+    @FindBy(xpath = "//span[contains(.,'Delete conversation')]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//div[@class='oc-dialog-buttonrow twobuttons']/button[2]")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//span[contains(.,'Promote to moderator')]")
+    public WebElement promoteModerator;
 
 }
