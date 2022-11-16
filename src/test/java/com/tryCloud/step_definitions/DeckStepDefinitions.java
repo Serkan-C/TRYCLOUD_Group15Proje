@@ -90,7 +90,6 @@ public class DeckStepDefinitions {
 
     @Then("{string} should be displayed under the selected {string}")
     public void shouldBeDisplayedUnderTheSelected(String arg0, String arg1) {
-Driver.getDriver().navigate().refresh();
         String xpath0 = "//*[contains(text(),'" + arg1 + "')]/../..//*[contains(text(),'" + arg0 + "')]";
         WebElement webElement = Driver.getDriver().findElement(By.xpath(xpath0));
         Assert.assertTrue(webElement.isDisplayed());

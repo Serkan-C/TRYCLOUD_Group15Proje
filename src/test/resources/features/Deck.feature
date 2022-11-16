@@ -1,4 +1,4 @@
-@Deck
+@Deck @TCLOUD-890
 Feature: Deck Module Functionality
 
   Background:
@@ -7,7 +7,7 @@ Feature: Deck Module Functionality
     Given user clicks on "the app-deck navigation" button
 
 
-
+  @TCLOUD-862
   Scenario Outline: User can create a new board
     When user clicks on "add board" button
     And write a "<new board name>" into the new board input box
@@ -20,7 +20,7 @@ Feature: Deck Module Functionality
       | test &/%$      |
       | test4          |
 
-
+  @TCLOUD-864
   Scenario Outline: User can create a new list of card/task under any board
     When "<board>" is selected
     And user clicks on "add list" button
@@ -37,7 +37,7 @@ Feature: Deck Module Functionality
       | test &/%$ | List5         |
       | test4     | test4         |
 
-
+  @TCLOUD-871
   Scenario Outline: User can add a new card/task on any list on the current board
     When "<board>" is selected
     And user clicks on add card button next to "<list>" and write a "<card name>"
@@ -57,7 +57,7 @@ Feature: Deck Module Functionality
       | 2test     | %th _(List) | ?? card     |
       | test4     | test4       | test4       |
 
-
+  @TCLOUD-872
   Scenario Outline: User can assign any card/task to himself/herself by using the three dots on the related card
     When "<board>" is selected
     And user clicks on three dots button inside "<card name>" under "<list>"
@@ -72,7 +72,7 @@ Feature: Deck Module Functionality
       | 2test     | 3th List    | 8 DRAC      |
       | test4     | test4       | test4       |
 
-
+  @TCLOUD-874
   Scenario Outline: User can move any card on the current board to any other list of other board
     When "<board>" is selected
     And user clicks on three dots button inside "<card name>" under "<list>"
@@ -116,7 +116,7 @@ Feature: Deck Module Functionality
       | test 1    | list 2   | card5       | test &/%$         | List5            |
       | 2test     | 3th List | card 6      | test 1            | list1            |
 
-
+  @TCLOUD-883
   Scenario Outline:User can assign any tag to any card/task
     When "<board>" is selected
     And user clicks on "<card name>" under "<list>"
