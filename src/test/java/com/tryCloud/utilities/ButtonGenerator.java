@@ -2,6 +2,7 @@ package com.tryCloud.utilities;
 
 import com.tryCloud.pages.ContactsPage;
 import com.tryCloud.pages.DashboardPage;
+import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
 import org.openqa.selenium.By;
@@ -14,8 +15,9 @@ public class ButtonGenerator {
     public static LoginPage loginPage;
     public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
-
     public static  ContactsPage contactsPage;
+    public static FileModulePage fileModulePage;
+
 
     public static void setObject() {
 
@@ -28,9 +30,16 @@ public class ButtonGenerator {
         if (dashboardPage == null) {
             dashboardPage = new DashboardPage();
         }
+
         if(contactsPage == null){
             contactsPage = new ContactsPage();
         }
+
+        if (fileModulePage == null) {
+            fileModulePage = new FileModulePage();
+        }
+
+
 
     }
 
@@ -93,12 +102,25 @@ public class ButtonGenerator {
                 break;
 
 
+
                 //----------------Followings are furkan' locators
             case"NewContacts_button":
                 contactsPage.NewContacts_button.click();
                 break;
 
                 //----------------furkan's codes are above
+
+            case "Plus":
+                fileModulePage.uploadMenuBtn.click();
+                break;
+            case "Upload file":
+                fileModulePage.uploadFileBtn.click();
+                break;
+            case "New folder":
+                fileModulePage.creatNewFolderBtn.click();
+                break;
+
+
 
         }
 
