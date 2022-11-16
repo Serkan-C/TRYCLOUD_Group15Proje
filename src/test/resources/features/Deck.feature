@@ -1,10 +1,11 @@
-
+@Deck
 Feature: Deck Module Functionality
 
   Background:
     Given the user is logged in
     Given user clicks on "on the Decks" button
     Given user clicks on "the app-deck navigation" button
+
 
 
   Scenario Outline: User can create a new board
@@ -56,7 +57,7 @@ Feature: Deck Module Functionality
       | 2test     | %th _(List) | ?? card     |
       | test4     | test4       | test4       |
 
-  @Deck
+
   Scenario Outline: User can assign any card/task to himself/herself by using the three dots on the related card
     When "<board>" is selected
     And user clicks on three dots button inside "<card name>" under "<list>"
@@ -92,6 +93,28 @@ Feature: Deck Module Functionality
       | test &/%$ | List5       | card5       | test 1            | list1            |
       | test &/%$ | List5       | card5       | test 1            | list 2           |
       | test 1    | list1       | card 6      | 2test             | 3th List         |
+
+  @Reverse
+  Scenario Outline: (Reverse) User can move any card on the current board to any other list of other board
+    When "<board>" is selected
+    And user clicks on three dots button inside "<card name>" under "<list>"
+    And user clicks on "Move card" button
+    And user clicks on "Select a board" button
+    And user chooses "<board destination>"
+    And user clicks on "Select a list" button
+    And user chooses "<list destination>"
+    And user clicks on "confirm move card" button
+    And "<board destination>" is selected
+    Then "<card name>" should be displayed under the selected "<list destination>"
+    Examples:
+      | board     | list     | card name   | board destination | list destination |
+      | 2test     | 3th List | card1       | test 1            | list1            |
+      | test &/%$ | List5    | card 2      | test 1            | list 2           |
+      | test 1    | list1    | 3th card    | 2test             | 3th List         |
+      | test &/%$ | List5    | %th _(card) | 2test             | %th _(List)      |
+      | test 1    | list1    | card5       | test &/%$         | List5            |
+      | test 1    | list 2   | card5       | test &/%$         | List5            |
+      | 2test     | 3th List | card 6      | test 1            | list1            |
 
 
   Scenario Outline:User can assign any tag to any card/task

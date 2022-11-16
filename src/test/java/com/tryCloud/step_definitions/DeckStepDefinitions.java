@@ -138,9 +138,10 @@ Driver.getDriver().navigate().refresh();
     public void userChoosesAFromTheTagList(String arg0) {
         System.out.println("arg0 = " + arg0);
         if (arg0.equals("tagGenerator")) {
-            int randomNumber = Faker.instance().number().numberBetween(1, 4);
+            int randomNumber = Faker.instance().number().numberBetween(10,49);
             System.out.println("randomNumber = " + randomNumber);
-            switch (randomNumber) {
+            System.out.println("randomNumber/10 = " + randomNumber/10);
+            switch (randomNumber/10) {
                 case (1):
                     etwas = "Action needed";
                     break;
