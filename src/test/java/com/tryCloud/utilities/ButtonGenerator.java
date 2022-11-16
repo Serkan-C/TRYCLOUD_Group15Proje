@@ -1,6 +1,7 @@
 package com.tryCloud.utilities;
 
 import com.tryCloud.pages.DashboardPage;
+import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
 import org.openqa.selenium.By;
@@ -14,6 +15,8 @@ public class ButtonGenerator {
     public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
 
+    public static FileModulePage fileModulePage;
+
     public static void setObject() {
 
         if (loginPage == null) {
@@ -25,6 +28,10 @@ public class ButtonGenerator {
         if (dashboardPage == null) {
             dashboardPage = new DashboardPage();
         }
+        if (fileModulePage == null) {
+            fileModulePage = new FileModulePage();
+        }
+
 
     }
 
@@ -84,6 +91,17 @@ public class ButtonGenerator {
             case "Promote to Moderator Button":
                 talkModulePage.promoteModerator.click();
                 break;
+            case "Plus":
+                fileModulePage.uploadMenuBtn.click();
+                break;
+            case "Upload file":
+                fileModulePage.uploadFileBtn.click();
+                break;
+            case "New folder":
+                fileModulePage.creatNewFolderBtn.click();
+                break;
+
+
         }
 
     }
