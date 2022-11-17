@@ -3,8 +3,10 @@ package com.tryCloud.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -37,8 +39,19 @@ access to the object of this class from outside the class
             */
             switch (browserType) {
                 case "chrome":
+
+                    ChromeOptions options = new ChromeOptions();
+                    HashMap<String,Integer> contentSetting=new HashMap<String,Integer>();
+                    HashMap<String,Object> profile=new HashMap<String, Object>();
+                    HashMap<String,Object> prefs=new HashMap<String, Object>();
+                    contentSetting.put("media_stream",1);
+                    profile.put("managed_default_content_settings",contentSetting);
+                    prefs.put("profile",profile);
+                    options.setExperimentalOption("prefs",prefs);
+
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+
+                    driverPool.set(new ChromeDriver(options));
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
@@ -60,8 +73,8 @@ access to the object of this class from outside the class
     */
     public static void closeDriver() {
         if (driverPool.get() != null) {
-            driverPool.get().quit(); // this line will terminate the existing session. value will not even be null
-            driverPool.remove();
+           driverPool.get().quit(); // this line will terminate the existing session. value will not even be null
+           driverPool.remove();
         }
     }
 
