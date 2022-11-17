@@ -5,6 +5,7 @@ import com.tryCloud.pages.DashboardPage;
 import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -85,11 +86,16 @@ public class ButtonGenerator {
                 dashboardPage.setStatusButton.click();
                 break;
             case "Start Call":
+               BrowserUtils.waitFor(3);
+                // BrowserUtils.waitForClickablility(talkModulePage.startCallButton,10);
                 talkModulePage.startCallButton.click();
+
                 break;
 
             case "Leave Call":
+BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton,10);
                 talkModulePage.leaveCallButton.click();
+
                 break;
             case "Delete Button":
                 talkModulePage.deleteButton.click();
