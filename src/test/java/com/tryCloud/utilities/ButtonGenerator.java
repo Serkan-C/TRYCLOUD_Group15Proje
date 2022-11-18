@@ -3,6 +3,7 @@ package com.tryCloud.utilities;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.*;
 
+
 public class ButtonGenerator {
 
 
@@ -91,10 +92,15 @@ public class ButtonGenerator {
                 }
                 break;
             case "Start Call":
+               BrowserUtils.waitFor(3);
+                // BrowserUtils.waitForClickablility(talkModulePage.startCallButton,10);
                 talkModulePage.startCallButton.click();
+
                 break;
             case "Leave Call":
+BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton,10);
                 talkModulePage.leaveCallButton.click();
+
                 break;
             case "Delete Button":
                 talkModulePage.deleteButton.click();
