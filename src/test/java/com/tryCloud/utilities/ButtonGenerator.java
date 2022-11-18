@@ -7,30 +7,35 @@ import com.tryCloud.pages.*;
 public class ButtonGenerator {
 
 
-    public static TalkModulePage talkModulePage;
-    public static ContactsPage contactsPage;
-    public static FileModulePage fileModulePage;
+    public static DeckPage deckPage;
     public static LoginPage loginPage;
+    public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
+    public static  ContactsPage contactsPage;
+    public static FileModulePage fileModulePage;
+
 
     public static void setObject() {
 
         if (loginPage == null) {
             loginPage = new LoginPage();
         }
-        if (dashboardPage == null) {
-            dashboardPage = new DashboardPage();
-        }
         if (talkModulePage == null) {
             talkModulePage = new TalkModulePage();
         }
+        if (dashboardPage == null) {
+            dashboardPage = new DashboardPage();
+        }
 
-        if (contactsPage == null) {
+        if(contactsPage == null){
             contactsPage = new ContactsPage();
         }
 
         if (fileModulePage == null) {
             fileModulePage = new FileModulePage();
+        }
+        if (deckPage == null) {
+            deckPage = new DeckPage();
         }
 
 
@@ -41,9 +46,7 @@ public class ButtonGenerator {
         talkModulePage = null;
         dashboardPage = null;
         contactsPage = null;
-        fileModulePage = null;
-
-
+        deckPage = null;
     }
 
     public static void setCompenent() {
@@ -99,12 +102,12 @@ public class ButtonGenerator {
                 BrowserUtils.waitFor(3);
 
                 break;
+
             case "Leave Call":
                 BrowserUtils.waitFor(15);
 
                // BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton, 10);
                 talkModulePage.leaveCallButton.click();
-
                 break;
             case "Delete Button":
                 talkModulePage.deleteButton.click();
@@ -133,74 +136,47 @@ public class ButtonGenerator {
             case "New folder":
                 fileModulePage.creatNewFolderBtn.click();
                 break;
-
-
-
-            //-------Mohammad--------//
-            case "testFile1.jpg":
-                fileModulePage.selectedItemFile1.click();
+//-------------------------------Deckpage-----------------------------------------------
+            case "the app-deck navigation":
+                deckPage.app_deck_navigation_button.click();
+                break;
+            case "add board":
+                deckPage.addBoardButton.click();
+                break;
+            case "confirm new board":
+                deckPage.confirmNewBoard.click();
+                break;
+            case "on the Decks":
+                deckPage.decksIcon.click();
+                break;
+            case "confirm add list":
+                deckPage.confirmAddListButton.click();
+                break;
+            case "add list":
+                deckPage.addListButton.click();
+                break;
+            case "assign to me":
+                deckPage.assignToMeButton.click();
+                break;
+            case "Move card":
+                deckPage.moveCardButton.click();
+                break;
+            case "Select a board":
+                deckPage.selectAboard.click();
+                break;
+            case "Select a list":
+                deckPage.selectAlist.click();
+                break;
+            case "confirm move card":
+                deckPage.confirmMoveCardButton.click();
+                break;
+            case "Assign a tag to this card...":
+                deckPage.inputBoxTag.click();
                 break;
 
-            case "testFile4.jpg":
-                fileModulePage.selectedItemFile4.click();
-                break;
 
-            case "Actions":
-                fileModulePage.actionsBtn.click();
-                break;
 
-            case "Move or copy":
-                fileModulePage.moveOrCopyBtn.click();
-                break;
-
-            case "TestFolder2":
-                fileModulePage.choseTargetFolder2.click();
-                break;
-
-            case "TestFolder1":
-                fileModulePage.choseTargetFolder1.click();
-                break;
-
-            case "copy to TestFolder2":
-                fileModulePage.choseTargetFolderCopyBtn.click();
-                break;
-
-            case "move to TestFolder1":
-                fileModulePage.choseTargetFolderMoveBtn.click();
-                break;
-
-            case "TestDeleteFolder":
-                fileModulePage.selectedItemForDelete.click();
-                break;
-
-            case "Delete":
-                fileModulePage.deleteBtn.click();
-                break;
-
-            case "Deleted Files":
-                fileModulePage.deletedItemFolder.click();
-                break;
         }
 
     }
-    public static void click_the_button_File(String buttonName) {
-        setCompenent();
-        switch (buttonName) {
-
-            case "eye button":
-                loginPage.eyeIMG.click();
-                break;
-
-            case "TestFolder2":
-                fileModulePage.selectedItemFolder.click();
-                break;
-
-        }
-    }
-
-
-
-
-
 }
-
