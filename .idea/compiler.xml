@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TRYCLOUD_Group15Proje" />
         <module name="TRYCLOUD-EU9GR15" />
       </profile>
     </annotationProcessing>
