@@ -9,7 +9,7 @@ Feature:
     When user clicks on Calendar icon
     And user clicks on change calendar view button
     And user clicks on day view button
-    Then user can see dayly calendar view
+    Then user can see daily calendar view
 
 
   Scenario: User can display weekly calendar view

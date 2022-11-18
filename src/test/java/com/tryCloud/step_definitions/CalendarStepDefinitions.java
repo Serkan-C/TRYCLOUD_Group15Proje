@@ -29,12 +29,22 @@ public class CalendarStepDefinitions {
         calendarPage.dayViewButton.click();
     }
 
-    @Then("user can see dayly calendar view")
-    public void user_can_see_dayly_calendar_view() {
+   /* @Then("user can see dayly calendar view")
+    public void user_can_see_daily_calendar_view() {
         String currentUrl =  Driver.getDriver().getCurrentUrl();
         String timeGridDay = "timeGridDay";
         Assert.assertTrue(currentUrl.contains(timeGridDay));
+
+
+    */
+        @Then("user can see daily calendar view")
+        public void userCanSeeDailyCalendarView() {
+            String currentUrl =  Driver.getDriver().getCurrentUrl();
+            String timeGridDay = "timeGridDay";
+            Assert.assertTrue(currentUrl.contains(timeGridDay));
     }
+
+
     @When("user clicks on week view button")
     public void user_clicks_on_week_view_button() {
         calendarPage.weekViewButton.click();
@@ -151,4 +161,5 @@ public class CalendarStepDefinitions {
         Assert.assertTrue(updatedCategory.isDisplayed());
 
     }
+
 }
