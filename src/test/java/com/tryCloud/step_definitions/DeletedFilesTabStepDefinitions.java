@@ -109,6 +109,7 @@ public class DeletedFilesTabStepDefinitions {
     @Then("User should click delete permenantly button")
     public void userShouldClickDeletePermenantlyButton() {
         BrowserUtils.waitForPageToLoad(60);
+        BrowserUtils.sleep(5);
         deletedFilesTabPage.deletePermanently.click();
         BrowserUtils.sleep(2);
 
