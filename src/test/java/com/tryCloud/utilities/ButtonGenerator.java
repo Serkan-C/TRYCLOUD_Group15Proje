@@ -126,6 +126,32 @@ public class ButtonGenerator {
             case "NewContacts_button":
                 contactsPage.NewContacts_button.click();
                 break;
+            case "AllContacts_button":
+                contactsPage.AllContacts_button.click();
+                break;
+            case "Contacts_button":
+                contactsPage.Contacts_button.click();
+                break;
+            case"ThreeDot_button":
+                contactsPage.ThreeDot_button.click();
+                break;
+            case"Delete_button":
+                contactsPage.Delete_button.click();
+                break;
+            case "ContactsIconPic_button":
+                contactsPage.ContactsIconPic_button.click();
+                break;
+            case "ChooseFromFile_button":
+                contactsPage.ChooseFromFile_button.click();
+                break;
+            case "Choose_button":
+                contactsPage.Choose_button.click();
+                break;
+            case "DialogClose_button":
+                contactsPage.DialogClose_button.click();
+                break;
+            case "AppNavigation_button":
+                contactsPage.AppNavigation_button.click();
 
             //----------------furkan's codes are above
 
@@ -237,6 +263,7 @@ public class ButtonGenerator {
             case "TestFolder2":
                 fileModulePage.selectedItemFolder.click();
                 break;
+
 
         }
     }
