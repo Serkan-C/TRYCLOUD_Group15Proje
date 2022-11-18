@@ -1,46 +1,68 @@
-@wip
+@TCLOUD-898
 Feature: Dashboard Functionality
 
   Background: As a user I should be able to modify Dashboard page
     Given the user is logged in
 
-
+@TCLOUD-891
   Scenario: User can see all modules and Username after login (1)
     When User access the dashboard successfully
-    Then User can see all modules and Username after login
+    Then User can see all modules on dashboard page
+    Then User can see Username on dashboard page
 
-  Scenario: User can click on Customize button and see the status widgets (2.1)
-    When User clicks on Customize button
-    And  User can see the status widgets
-    Then User can select any of them
+@TCLOUD-892
+  Scenario Outline: User can see status widgets and select any of them (2.1)
+    When user click "Customize button"
+    And User can see the status widgets and click on it
+    Then User can select any of "<widgets>"
+    Examples:
+      |widgets|
+      | Weather |
+      | Upcoming cards |
 
-  Scenario: User can click on Customize button and see the background images (2.2)
-    When User clicks on Customize button
+@TCLOUD-893
+  Scenario Outline: User can see background images and select any of them (2.2)
+    When user click "Customize button"
     And User can see the background images
-    Then User can select any of background images
+    Then User can select any of "<background images>" from Images
+    Examples:
+      |background images |
+      | Plain background |
+      | Default images   |
 
-  Scenario: User can click on Set Status button and see the Online status options (3)
-    When User can click on Set Status button
+@TCLOUD-894
+  Scenario Outline: User can click on Set Status button and see the Online status options and select any of them(3)
+    When user click "Set Status button"
     And User can see the Online status options
-    Then User can select any of status options
+    Then user can select any of "<status options>" from status
+    Examples:
+      |status options|
+      | Do not disturb |
+      | Away |
 
-  Scenario: User can click on Set Status button and select any of them (3.1)
-    When User can click on Set Status button
+@TCLOUD-895
+  Scenario Outline: User can see the Status messages and select any of them  (3.1)
+    When user click "Set Status button"
     And User can see the Status messages
-    Then User can select any of status messages
+    Then User can select any of "<status messages>" from messages
+    Then user click "Set Status Message"
+    Examples:
+      |status messages|
+      | In a meeting  |
+      | Vacationing   |
 
-  Scenario: User can click on Set Status button and Set/Clear the status message(3.2)
-    When User can click on Set Status button
-    And User can select any of Status messages and clicks on the Set status message button
-    Then User clicks the Clear status message button
+@TCLOUD-896
+  Scenario: User can click on Set Status button and Clear the status message(3.2)
+    When user click "Set Status button"
+    And user click "Clear status message"
+    Then User can see his selections on dashboard after these steps
 
-  Scenario: User can see selections on dashboard (3.3)
-    When User is done with selections
-    Then User can see selections on dashboard
-
+@TCLOUD-897
   Scenario: User can write his/her own status in input box (4)
-    When User can see the What's your status ? input box
+    When user click "Set Status button"
     And User can write any "status" in input box manually
     Then User can click the Set status message button and see the status on dashboard
+
+
 
 

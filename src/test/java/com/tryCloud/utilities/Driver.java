@@ -72,11 +72,16 @@ access to the object of this class from outside the class
    This method will make sure our driver value is always null after using quit() method
     */
     public static void closeDriver() {
+
         if (driverPool.get() != null) {
            driverPool.get().quit(); // this line will terminate the existing session. value will not even be null
            driverPool.remove();
         }
+
+
     }
+
+
 
 
 }
