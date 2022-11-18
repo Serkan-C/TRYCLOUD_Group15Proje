@@ -39,6 +39,9 @@ public class ContactsPage extends BasePage {
     //a[@class='oc-dialog-close']
     //div[@class="oc-dialog"]/a
 
+    @FindBy(xpath = "//a[@class=\"app-navigation-toggle\"]")
+    public WebElement AppNavigation_button;//this is three line button to hide  app-navigation column.
+
 
 
     //--------------Text Box Locators Below
@@ -77,6 +80,7 @@ public class ContactsPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-content-list-item active']")
     public WebElement ContactListFirst_item;
+    //    (//div[@class='app-content-list-item'])[3]  this statement for other web elements of list
 
     @FindBy(xpath = "//table[@id=\"picker-filestable\"]/tbody")
     public WebElement ChooseFromFile_table;
@@ -85,7 +89,8 @@ public class ContactsPage extends BasePage {
     @FindBy(xpath = "//div[@class=\"contact-header-avatar__wrapper\"]/div[1]")
     public WebElement ContactAvatarPic;
 
-    //@FindBy(xpath = "//tr[contains(@data-entryname,'.jpg')]")
+    @FindBy(xpath = "//div[@id=\"app-navigation-vue\"]")
+    public WebElement AppNavigationColumn;
 
 
    

@@ -9,18 +9,10 @@ Feature:Contacts Module Functionality
 
   Scenario Outline: User can create a new contact
     When User clicks "NewContacts_button" button.
-    #And User waits "2" seconds.
-    #And User enters  "<name>" in "NewContact_Box".
     And User enters  "<name>" in "NewContact_CompanyBox".
     And User enters  "<surname>" in "NewContact_TitleBox".
-    And User waits "2" seconds.
     And User clicks "Contacts_button" button.
-    #And User returns dashboard page.
-    And User waits "2" seconds.
-    #And User clicks Contacts icon on Dashboard page
-    #And User clicks "AllContacts_button" button.
     Then User should see "<name>" and "<surname>" in the All contacts list.
-    And User logs out
 
     Examples:
       | name  | surname |
@@ -32,9 +24,7 @@ Feature:Contacts Module Functionality
   Scenario: User can see all the contacts as a list inside the middle column and total number of the contacts near the “All Contacts” tab
     And User clicks "AllContacts_button" button.
     And User should see that number of cantacts are equal to given total number.
-    And User logs out
       #You can add negative testing here
-
 
 
 
@@ -45,15 +35,19 @@ Feature:Contacts Module Functionality
     And User clicks "ContactsIconPic_button" button.
     And User clicks "ChooseFromFile_button" button.
     And User finds ".jpg" web element and click.
-    And User waits "2" seconds.
     When User clicks "Choose_button" button.
-    And User waits "2" seconds.
-    #And User clicks "Contacts_button" button.
     Then User should see web element "ContactAvatarPic" attribute "_prevClass" value has changed
-    #And User waits "2" seconds.
-    And User logs out
 
-  @fk
+
+
   Scenario: User can delete any selected contact
+    And User chooses any contact in the list.
+    When User deletes selected contact.
+    Then User should not see the selected contact in list.
 
-  Scenario: Delete this line and write your own AC.
+
+  Scenario: User can hide app-navigation by clicking hide icon.
+    And User can see app-navigation column on the left.
+    When User clicks "AppNavigation_button" button.
+    Then User should see app-navigation column is hidden
+
