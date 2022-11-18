@@ -74,7 +74,7 @@ public class DeletedFilesTabStepDefinitions {
         if(true){
             Assert.assertTrue(deletedFilesTabPage.DeletedButtonOldestToNewest.isEnabled());
         }else{
-            System.err.println("Your files are not listed by deleted files");;
+            System.err.println("Your files are not listed by deleted files");
         }
 
 
