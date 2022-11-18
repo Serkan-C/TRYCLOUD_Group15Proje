@@ -3,16 +3,22 @@ package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
+import com.tryCloud.utilities.BrowserUtils;
 import com.tryCloud.utilities.ButtonGenerator;
 import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TalkModuleStepDefinitions {
 
@@ -82,7 +88,7 @@ public class TalkModuleStepDefinitions {
 
     @When("user select {string}  from participant list")
     public void userSelectFromParticipantList(String participant) {
-        String xpathName = "//*[@class=\"participants-search-results\"]//span[contains(.,'"+participant+"')]";
+        String xpathName = "//*[@class=\"participants-search-results\"]//span[contains(.,'" + participant + "')]";
         WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName));
         participant1.click();
     }
@@ -112,7 +118,7 @@ Assert.assertTrue(true);
     @When("user select {string} from conversation list")
     public void userSelectFromConversationList(String conversationName) {
         //*[@class="conversations"]//span[contains(.,"cydeo2")]
-        String xpathName2 = "        //*[@class=\"conversations\"]//span[contains(.,'"+conversationName+"')]";
+        String xpathName2 = "        //*[@class=\"conversations\"]//span[contains(.,'" + conversationName + "')]";
         WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
         participant1.click();
 
@@ -121,11 +127,17 @@ Assert.assertTrue(true);
     @Then("user click {string} participant menu button")
     public void userClickParticipantMenuButton(String participantName) {//*[@class="participant-row__user-descriptor"]/span[contains(.,'Employee100')]
         //*[@class="participant-row__user-descriptor"]/span[contains(.,'Employee100')]/../../..//button[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']
-        String xpathName2 = "//*[@class=\"participant-row__user-descriptor\"]/span[contains(.,'"+participantName+"')]/../../..//button[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']";
+        String xpathName2 = "//*[@class=\"participant-row__user-descriptor\"]/span[contains(.,'" + participantName + "')]/../../..//button[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']";
         WebElement participant1 = Driver.getDriver().findElement(By.xpath(xpathName2));
         participant1.click();
     }
 
+    @When("user click {string} and click accept")
+    public void userClickAndClickAccept(String buttonName) {
+
+        ButtonGenerator.click_the_button(buttonName);
+
+    }
 
 }
 

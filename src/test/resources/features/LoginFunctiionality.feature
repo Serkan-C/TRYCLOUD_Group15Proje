@@ -35,6 +35,8 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
     When User enter a valid username
     And User enter a invalid "<password>" and click Login Button
     Then Wrong username or password should be displayed
+    Then Wrong username or password should be displayed
+
     Examples:
       | password    |
       | EMPloyee123 |

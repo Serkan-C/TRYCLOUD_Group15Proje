@@ -1,20 +1,13 @@
 package com.tryCloud.utilities;
 
-import com.tryCloud.pages.ContactsPage;
-import com.tryCloud.pages.DashboardPage;
-import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
-import com.tryCloud.pages.TalkModulePage;
-import com.tryCloud.pages.DeckPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
+import com.tryCloud.pages.*;
+
 
 public class ButtonGenerator {
 
 
-public static DeckPage deckPage;
+    public static DeckPage deckPage;
     public static LoginPage loginPage;
     public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
@@ -54,7 +47,6 @@ public static DeckPage deckPage;
         dashboardPage = null;
         contactsPage = null;
         deckPage = null;
-
     }
 
     public static void setCompenent() {
@@ -73,6 +65,21 @@ public static DeckPage deckPage;
             case " login button":
                 loginPage.loginButton.click();
                 break;
+            case "Customize button":
+                dashboardPage.customizeButton.click();
+                break;
+            case "Set Status button":
+                dashboardPage.setStatusButton.click();
+                break;
+            case "Online Status":
+                dashboardPage.onlineStatus.click();
+                break;
+            case "Set Status Message":
+                dashboardPage.setStatusMessage.click();
+                break;
+            case "Clear status message":
+                dashboardPage.clearStatusMessage.click();
+                break;
             case "Plus Icon":
                 talkModulePage.plusIcon.click();
                 break;
@@ -87,14 +94,19 @@ public static DeckPage deckPage;
                     talkModulePage.menuButton.click();
                 }
                 break;
-            case "Set Status":
-                dashboardPage.setStatusButton.click();
-                break;
             case "Start Call":
+                BrowserUtils.waitFor(2);
+
+                //  BrowserUtils.waitForClickablility(talkModulePage.startCallButton,10);
                 talkModulePage.startCallButton.click();
+                BrowserUtils.waitFor(3);
+
                 break;
 
             case "Leave Call":
+                BrowserUtils.waitFor(15);
+
+               // BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton, 10);
                 talkModulePage.leaveCallButton.click();
                 break;
             case "Delete Button":
@@ -108,13 +120,12 @@ public static DeckPage deckPage;
                 break;
 
 
-
-                //----------------Followings are furkan' locators
-            case"NewContacts_button":
+            //----------------Followings are furkan' locators
+            case "NewContacts_button":
                 contactsPage.NewContacts_button.click();
                 break;
 
-                //----------------furkan's codes are above
+            //----------------furkan's codes are above
 
             case "Plus":
                 fileModulePage.uploadMenuBtn.click();
