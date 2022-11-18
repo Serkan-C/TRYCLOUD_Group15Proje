@@ -13,8 +13,8 @@ Feature: Talk Module Functionality
     Then user created  "<conversation>" conversation and is on this conversation page
     Examples:
       | conversation |
-      | deneme1      |
-      | deneme2      |
+      | deneme3      |
+      | deneme4      |
 
   @TCLOUD-865
   Scenario Outline: User can add any selected participant to any conversation
@@ -26,7 +26,7 @@ Feature: Talk Module Functionality
     Then user see added participant "<participant>" in the conversation box
     Examples:
       | conversation | participant |
-      | deneme1       | Employee104 |
+      | deneme4       | Employee104 |
 
   @TCLOUD-868
   Scenario: Display all conversation list under the Talk module
@@ -58,7 +58,7 @@ Feature: Talk Module Functionality
 
     Examples:
       | conversation | participant |
-      | deneme1       | Employee104 |
+      | deneme4       | Employee104 |
 
   @TCLOUD-873
   Scenario Outline: User can delete a conversation
@@ -70,6 +70,6 @@ Feature: Talk Module Functionality
 
     Examples:
       | conversation |
-      | deneme1      |
-      | deneme2      |
+      | deneme3      |
+      | deneme4      |
 
