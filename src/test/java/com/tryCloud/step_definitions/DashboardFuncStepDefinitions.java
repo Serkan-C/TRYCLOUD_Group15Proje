@@ -1,12 +1,9 @@
 package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.DashboardPage;
-import com.tryCloud.pages.LoginPage;
-import com.tryCloud.utilities.BrowserUtils;
 import com.tryCloud.utilities.ButtonGenerator;
 import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -144,12 +141,6 @@ public class DashboardFuncStepDefinitions {
     public void user_can_click_the_set_status_message_button_and_see_the_status_on_dashboard() { //4
         dashboardPage.setStatusMessage.click();
 
-    }
-
-
-    @When("user click {string}")
-    public void userClick(String buttonName) {
-        ButtonGenerator.click_the_button(buttonName);
     }
 
 }
