@@ -7,30 +7,35 @@ import com.tryCloud.pages.*;
 public class ButtonGenerator {
 
 
-    public static TalkModulePage talkModulePage;
-    public static ContactsPage contactsPage;
-    public static FileModulePage fileModulePage;
+    public static DeckPage deckPage;
     public static LoginPage loginPage;
+    public static TalkModulePage talkModulePage;
     public static DashboardPage dashboardPage;
+    public static  ContactsPage contactsPage;
+    public static FileModulePage fileModulePage;
+
 
     public static void setObject() {
 
         if (loginPage == null) {
             loginPage = new LoginPage();
         }
-        if (dashboardPage == null) {
-            dashboardPage = new DashboardPage();
-        }
         if (talkModulePage == null) {
             talkModulePage = new TalkModulePage();
         }
+        if (dashboardPage == null) {
+            dashboardPage = new DashboardPage();
+        }
 
-        if (contactsPage == null) {
+        if(contactsPage == null){
             contactsPage = new ContactsPage();
         }
 
         if (fileModulePage == null) {
             fileModulePage = new FileModulePage();
+        }
+        if (deckPage == null) {
+            deckPage = new DeckPage();
         }
 
 
@@ -42,8 +47,8 @@ public class ButtonGenerator {
         dashboardPage = null;
         contactsPage = null;
         fileModulePage = null;
-
-
+        deckPage = null;
+        
     }
 
     public static void setCompenent() {
@@ -99,12 +104,12 @@ public class ButtonGenerator {
                 BrowserUtils.waitFor(3);
 
                 break;
+
             case "Leave Call":
                 BrowserUtils.waitFor(15);
 
                // BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton, 10);
                 talkModulePage.leaveCallButton.click();
-
                 break;
             case "Delete Button":
                 talkModulePage.deleteButton.click();
@@ -133,6 +138,44 @@ public class ButtonGenerator {
             case "New folder":
                 fileModulePage.creatNewFolderBtn.click();
                 break;
+//-------------------------------Deckpage-----------------------------------------------
+            case "the app-deck navigation":
+                deckPage.app_deck_navigation_button.click();
+                break;
+            case "add board":
+                deckPage.addBoardButton.click();
+                break;
+            case "confirm new board":
+                deckPage.confirmNewBoard.click();
+                break;
+            case "on the Decks":
+                deckPage.decksIcon.click();
+                break;
+            case "confirm add list":
+                deckPage.confirmAddListButton.click();
+                break;
+            case "add list":
+                deckPage.addListButton.click();
+                break;
+            case "assign to me":
+                deckPage.assignToMeButton.click();
+                break;
+            case "Move card":
+                deckPage.moveCardButton.click();
+                break;
+            case "Select a board":
+                deckPage.selectAboard.click();
+                break;
+            case "Select a list":
+                deckPage.selectAlist.click();
+                break;
+            case "confirm move card":
+                deckPage.confirmMoveCardButton.click();
+                break;
+            case "Assign a tag to this card...":
+                deckPage.inputBoxTag.click();
+                break;
+
 
 
 
