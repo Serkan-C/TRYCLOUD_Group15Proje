@@ -57,7 +57,7 @@ public WebElement searchParticipant;
     public WebElement menuButton;
 //*[@id="app-content-vue"]/div/div[1]/button
 
-    @FindBy(xpath = "//*[@class=\"icon icon-start-call\"]")
+    @FindBy(xpath = "//*[@id='app-content-vue']/div/div[1]/button")
     public WebElement startCallButton;
 
     @FindBy(xpath = "//*[@class='icon icon-leave-call']")
