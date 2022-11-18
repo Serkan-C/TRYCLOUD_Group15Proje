@@ -3,13 +3,14 @@ package com.tryCloud.utilities;
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.*;
 
+
 public class ButtonGenerator {
 
 
     public static TalkModulePage talkModulePage;
     public static ContactsPage contactsPage;
     public static FileModulePage fileModulePage;
-    public static  LoginPage loginPage;
+    public static LoginPage loginPage;
     public static DashboardPage dashboardPage;
 
     public static void setObject() {
@@ -24,14 +25,13 @@ public class ButtonGenerator {
             talkModulePage = new TalkModulePage();
         }
 
-        if(contactsPage == null){
+        if (contactsPage == null) {
             contactsPage = new ContactsPage();
         }
 
         if (fileModulePage == null) {
             fileModulePage = new FileModulePage();
         }
-
 
 
     }
@@ -62,7 +62,7 @@ public class ButtonGenerator {
                 loginPage.loginButton.click();
                 break;
             case "Customize button":
-               dashboardPage.customizeButton.click();
+                dashboardPage.customizeButton.click();
                 break;
             case "Set Status button":
                 dashboardPage.setStatusButton.click();
@@ -91,10 +91,19 @@ public class ButtonGenerator {
                 }
                 break;
             case "Start Call":
+                BrowserUtils.waitFor(2);
+
+                //  BrowserUtils.waitForClickablility(talkModulePage.startCallButton,10);
                 talkModulePage.startCallButton.click();
+                BrowserUtils.waitFor(3);
+
                 break;
             case "Leave Call":
+                BrowserUtils.waitFor(15);
+
+               // BrowserUtils.waitForClickablility(talkModulePage.leaveCallButton, 10);
                 talkModulePage.leaveCallButton.click();
+
                 break;
             case "Delete Button":
                 talkModulePage.deleteButton.click();
@@ -107,13 +116,12 @@ public class ButtonGenerator {
                 break;
 
 
-
-                //----------------Followings are furkan' locators
-            case"NewContacts_button":
+            //----------------Followings are furkan' locators
+            case "NewContacts_button":
                 contactsPage.NewContacts_button.click();
                 break;
 
-                //----------------furkan's codes are above
+            //----------------furkan's codes are above
 
             case "Plus":
                 fileModulePage.uploadMenuBtn.click();
@@ -124,7 +132,6 @@ public class ButtonGenerator {
             case "New folder":
                 fileModulePage.creatNewFolderBtn.click();
                 break;
-
 
 
         }

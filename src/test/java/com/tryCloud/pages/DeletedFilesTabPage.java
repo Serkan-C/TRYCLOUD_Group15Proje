@@ -37,10 +37,15 @@ public class DeletedFilesTabPage {
     @FindBy(xpath ="//span[@class='sort-indicator hidden icon-triangle-s']")
     public WebElement AlphUp;
 
-    @FindBy(css = "body > div:nth-child(23) > div:nth-child(2) > div:nth-child(15) > table:nth-child(6) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1) > span:nth-child(3) > a:nth-child(2)")
+    @FindBy(css = "body > div:nth-child(23) > div:nth-child(2) > div:nth-child(15) > table:nth-child(6) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1) > span:nth-child(4) > a:nth-child(2) > span:nth-child(1)")
     public WebElement threeDots;
 
-    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/div/ul/li[1]/a/span[2]")
+    //li[@class=' action-delete-container']
+    //*[@id="fileList"]/tr[1]/td[2]/div/ul/li[1]/a/span[2]
+
+
+
+    @FindBy(css = "body > div:nth-child(23) > div:nth-child(2) > div:nth-child(15) > table:nth-child(6) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1) > span:nth-child(4) > a:nth-child(2) > span:nth-child(1)")
     public WebElement deletePermanently;
 
     @FindBy(css = "#fileList > tr:nth-child(1) > td.filename > a > span.fileactions > a.action.action-restore.permanent > span:nth-child(2)")
