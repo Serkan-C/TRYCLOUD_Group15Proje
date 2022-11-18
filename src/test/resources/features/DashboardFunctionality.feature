@@ -1,16 +1,16 @@
-@wip
+@TCLOUD-898
 Feature: Dashboard Functionality
 
   Background: As a user I should be able to modify Dashboard page
     Given the user is logged in
 
-
+@TCLOUD-891
   Scenario: User can see all modules and Username after login (1)
     When User access the dashboard successfully
     Then User can see all modules on dashboard page
     Then User can see Username on dashboard page
 
-
+@TCLOUD-892
   Scenario Outline: User can see status widgets and select any of them (2.1)
     When user click "Customize button"
     And User can see the status widgets and click on it
@@ -20,7 +20,7 @@ Feature: Dashboard Functionality
       | Weather |
       | Upcoming cards |
 
-
+@TCLOUD-893
   Scenario Outline: User can see background images and select any of them (2.2)
     When user click "Customize button"
     And User can see the background images
@@ -30,7 +30,7 @@ Feature: Dashboard Functionality
       | Plain background |
       | Default images   |
 
-
+@TCLOUD-894
   Scenario Outline: User can click on Set Status button and see the Online status options and select any of them(3)
     When user click "Set Status button"
     And User can see the Online status options
@@ -40,6 +40,7 @@ Feature: Dashboard Functionality
       | Do not disturb |
       | Away |
 
+@TCLOUD-895
   Scenario Outline: User can see the Status messages and select any of them  (3.1)
     When user click "Set Status button"
     And User can see the Status messages
@@ -50,11 +51,13 @@ Feature: Dashboard Functionality
       | In a meeting  |
       | Vacationing   |
 
+@TCLOUD-896
   Scenario: User can click on Set Status button and Clear the status message(3.2)
     When user click "Set Status button"
     And user click "Clear status message"
     Then User can see his selections on dashboard after these steps
 
+@TCLOUD-897
   Scenario: User can write his/her own status in input box (4)
     When user click "Set Status button"
     And User can write any "status" in input box manually

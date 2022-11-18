@@ -23,9 +23,6 @@ public class ButtonGenerator {
         if (talkModulePage == null) {
             talkModulePage = new TalkModulePage();
         }
-        if (dashboardPage == null) {
-            dashboardPage = new DashboardPage();
-        }
 
         if(contactsPage == null){
             contactsPage = new ContactsPage();
@@ -93,13 +90,9 @@ public class ButtonGenerator {
                     talkModulePage.menuButton.click();
                 }
                 break;
-            case "Set Status":
-                dashboardPage.setStatusButton.click();
-                break;
             case "Start Call":
                 talkModulePage.startCallButton.click();
                 break;
-
             case "Leave Call":
                 talkModulePage.leaveCallButton.click();
                 break;

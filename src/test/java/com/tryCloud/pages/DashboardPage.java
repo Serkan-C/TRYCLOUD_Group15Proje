@@ -38,7 +38,8 @@ public class DashboardPage {
     @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
     public WebElement setStatusMessage;
 
-    @FindBy(xpath = "//button[@class='status-buttons__select']")
+    //@FindBy(xpath = "//button[@class='status-buttons__select']")
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/div[7]/button[1]")
     public WebElement clearStatusMessage;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/div[4]/form/input")
