@@ -46,7 +46,9 @@ public class ButtonGenerator {
         talkModulePage = null;
         dashboardPage = null;
         contactsPage = null;
+        fileModulePage = null;
         deckPage = null;
+        
     }
 
     public static void setCompenent() {
@@ -176,7 +178,72 @@ public class ButtonGenerator {
 
 
 
+
+            //-------Mohammad--------//
+            case "testFile1.jpg":
+                fileModulePage.selectedItemFile1.click();
+                break;
+
+            case "testFile4.jpg":
+                fileModulePage.selectedItemFile4.click();
+                break;
+
+            case "Actions":
+                fileModulePage.actionsBtn.click();
+                break;
+
+            case "Move or copy":
+                fileModulePage.moveOrCopyBtn.click();
+                break;
+
+            case "TestFolder2":
+                fileModulePage.choseTargetFolder2.click();
+                break;
+
+            case "TestFolder1":
+                fileModulePage.choseTargetFolder1.click();
+                break;
+
+            case "copy to TestFolder2":
+                fileModulePage.choseTargetFolderCopyBtn.click();
+                break;
+
+            case "move to TestFolder1":
+                fileModulePage.choseTargetFolderMoveBtn.click();
+                break;
+
+            case "TestDeleteFolder":
+                fileModulePage.selectedItemForDelete.click();
+                break;
+
+            case "Delete":
+                fileModulePage.deleteBtn.click();
+                break;
+
+            case "Deleted Files":
+                fileModulePage.deletedItemFolder.click();
+                break;
         }
 
     }
+    public static void click_the_button_File(String buttonName) {
+        setCompenent();
+        switch (buttonName) {
+
+            case "eye button":
+                loginPage.eyeIMG.click();
+                break;
+
+            case "TestFolder2":
+                fileModulePage.selectedItemFolder.click();
+                break;
+
+        }
+    }
+
+
+
+
+
 }
+
