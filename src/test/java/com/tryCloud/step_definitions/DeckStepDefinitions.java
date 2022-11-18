@@ -19,7 +19,7 @@ public class DeckStepDefinitions {
 
     @And("user clicks on {string} button")
     public void user_clicks_on_button(String string) {
-        DeckButtonGenerator.click_the_button(string);
+        ButtonGenerator.click_the_button(string);
 
     }
 
