@@ -74,7 +74,7 @@ public class DeletedFilesTabStepDefinitions {
         if(true){
             Assert.assertTrue(deletedFilesTabPage.DeletedButtonOldestToNewest.isEnabled());
         }else{
-            System.err.println("Your files are not listed by deleted files");;
+            System.err.println("Your files are not listed by deleted files");
         }
 
 
@@ -109,6 +109,7 @@ public class DeletedFilesTabStepDefinitions {
     @Then("User should click delete permenantly button")
     public void userShouldClickDeletePermenantlyButton() {
         BrowserUtils.waitForPageToLoad(60);
+        BrowserUtils.sleep(5);
         deletedFilesTabPage.deletePermanently.click();
         BrowserUtils.sleep(2);
 
