@@ -1,28 +1,24 @@
 package com.tryCloud.utilities;
 
-import com.tryCloud.pages.ContactsPage;
-import com.tryCloud.pages.DashboardPage;
-import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.pages.LoginPage;
-import com.tryCloud.pages.TalkModulePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
+import com.tryCloud.pages.*;
 
 public class ButtonGenerator {
 
-    public static LoginPage loginPage;
-    public static TalkModulePage talkModulePage;
-    public static DashboardPage dashboardPage;
-    public static  ContactsPage contactsPage;
-    public static FileModulePage fileModulePage;
 
+    public static TalkModulePage talkModulePage;
+    public static ContactsPage contactsPage;
+    public static FileModulePage fileModulePage;
+    public static  LoginPage loginPage;
+    public static DashboardPage dashboardPage;
 
     public static void setObject() {
 
         if (loginPage == null) {
             loginPage = new LoginPage();
+        }
+        if (dashboardPage == null) {
+            dashboardPage = new DashboardPage();
         }
         if (talkModulePage == null) {
             talkModulePage = new TalkModulePage();
@@ -49,6 +45,7 @@ public class ButtonGenerator {
         dashboardPage = null;
         contactsPage = null;
 
+
     }
 
     public static void setCompenent() {
@@ -66,6 +63,21 @@ public class ButtonGenerator {
                 break;
             case " login button":
                 loginPage.loginButton.click();
+                break;
+            case "Customize button":
+               dashboardPage.customizeButton.click();
+                break;
+            case "Set Status button":
+                dashboardPage.setStatusButton.click();
+                break;
+            case "Online Status":
+                dashboardPage.onlineStatus.click();
+                break;
+            case "Set Status Message":
+                dashboardPage.setStatusMessage.click();
+                break;
+            case "Clear status message":
+                dashboardPage.clearStatusMessage.click();
                 break;
             case "Plus Icon":
                 talkModulePage.plusIcon.click();
