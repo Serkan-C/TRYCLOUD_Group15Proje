@@ -133,3 +133,8 @@ Feature: Deck Module Functionality
       | card5       | test 1    | list 2   | tagGenerator |
       | card 6      | 2test     | 3th List | tagGenerator |
       | test4       | test4     | test4    | tagGenerator |
+
+    @Delete
+    Scenario: Delete all Decks
+      When Decks are existing
+      Then delete all existing decks
