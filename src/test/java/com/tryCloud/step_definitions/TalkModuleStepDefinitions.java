@@ -3,6 +3,7 @@ package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.pages.TalkModulePage;
+import com.tryCloud.utilities.BrowserUtils;
 import com.tryCloud.utilities.ButtonGenerator;
 import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -64,6 +65,7 @@ public class TalkModuleStepDefinitions {
 
     @When("user click {string}")
     public void userClicks(String buttonName) {
+        BrowserUtils.waitFor(3);
         ButtonGenerator.click_the_button(buttonName);
 
     }

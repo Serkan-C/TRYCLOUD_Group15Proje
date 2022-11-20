@@ -20,16 +20,16 @@ public class DashboardPage {
     @FindBy(xpath = "//a[@class='edit-panels icon-rename']")
     public WebElement customizeButton;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/ol[1]/li[1]/label")
+    @FindBy(className = "icon-user-status-online")
     public WebElement statusWidges;
 
     @FindBy(xpath = "//div[@class='modal__content']")
     public WebElement backgroundImage;
 
-    @FindBy(xpath = "//div[@id=\"status-status\"]")
+    @FindBy(id= "status-status")
     public WebElement setStatusButton;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div")
+    @FindBy(xpath = "//div[@class='set-status-modal__online-status']")
     public WebElement onlineStatus;
 
     @FindBy(xpath = "//div[@class='set-status-modal']")
@@ -38,8 +38,7 @@ public class DashboardPage {
     @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
     public WebElement setStatusMessage;
 
-    //@FindBy(xpath = "//button[@class='status-buttons__select']")
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/div[7]/button[1]")
+    @FindBy(xpath = "//button[@class='status-buttons__select']")
     public WebElement clearStatusMessage;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/div[4]/form/input")
