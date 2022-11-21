@@ -48,7 +48,6 @@ public class ButtonGenerator {
         contactsPage = null;
         fileModulePage = null;
         deckPage = null;
-        
     }
 
     public static void setCompenent() {
@@ -264,6 +263,9 @@ public class ButtonGenerator {
                 fileModulePage.selectedItemFolder.click();
                 break;
 
+            case "TestDeleteFolder":
+                fileModulePage.selectedItemForDelete.click();
+                break;
 
         }
     }

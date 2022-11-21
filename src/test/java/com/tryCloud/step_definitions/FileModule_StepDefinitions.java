@@ -33,9 +33,9 @@ public class FileModule_StepDefinitions {
 
     @When("User select Upload file from DropDown box choose a {string} and upload it")
     public void user_select_upload_file_from_drop_down_box_choose_a_and_upload_it(String newFile) throws AWTException {
-        fileModulePage.uploadFileBtn.click();
-        BrowserUtils.sleep(3);
-        fileModulePage.uploadFile(newFile);
+       /* fileModulePage.uploadFileBtn.click();
+        BrowserUtils.sleep(3);*/
+        fileModulePage.uploadFile1(newFile);
         BrowserUtils.sleep(3);
         actualFileName = newFile;
     }
@@ -70,7 +70,6 @@ public class FileModule_StepDefinitions {
 
     @When("User select file {string} From the list")
     public void userSelectFileFromTheList(String item) {
-
         BrowserUtils.sleep(3);
         ButtonGenerator.click_the_button(item);
         actualFileName = item;
@@ -106,11 +105,12 @@ public class FileModule_StepDefinitions {
     }
 
     @When("User select folder {string} From the list")
-    public void userSelectFolderFromTheList(String item) {
-        ButtonGenerator.click_the_button_File(item);
+    public void userSelectFolderFromTheList(String itemForDelete) {
         BrowserUtils.sleep(3);
+        ButtonGenerator.click_the_button_File(itemForDelete);
+        BrowserUtils.sleep(3);
+        actualFolderName = itemForDelete;
 
-        actualFolderName = item;
     }
 
     @Then("User should see the copied or moved folder {string} in the {string}.")
