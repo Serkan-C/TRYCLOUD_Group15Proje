@@ -1,4 +1,4 @@
-@TCLOUD-909
+@TCLOUD-909 @Regression
 Feature: Upload/Edit/Delete File Module Functionality
 
   User Story :
