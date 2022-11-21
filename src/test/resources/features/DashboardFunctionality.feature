@@ -1,4 +1,4 @@
-@TCLOUD-898
+@TCLOUD-898 @Regression
 Feature: Dashboard Functionality
 
   Background: As a user I should be able to modify Dashboard page
