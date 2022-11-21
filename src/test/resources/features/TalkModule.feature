@@ -1,4 +1,4 @@
-@TCLOUD-876
+@TCLOUD-876 @Regression
 Feature: Talk Module Functionality
 
   Background:
