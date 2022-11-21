@@ -16,7 +16,7 @@ Feature: Talk Module Functionality
       | deneme3      |
       | deneme4      |
 
-  @TCLOUD-865 Qregression
+  @TCLOUD-865 @regression
   Scenario Outline: User can add any selected participant to any conversation
     Given the user navigate the "talk" Module and click
     When user select "<conversation>" from conversation list
