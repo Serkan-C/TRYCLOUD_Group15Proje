@@ -1,4 +1,4 @@
-@TCLOUD-916
+@TCLOUD-916 @Regression
 Feature: As a user, I should be able to see all deleted files and delete/restore them permenantly under the Deleted Files tab.
 
   Background:
