@@ -10,8 +10,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.bytebuddy.agent.builder.AgentBuilder;
+import org.apache.velocity.util.introspection.VelPropertySet;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static com.tryCloud.utilities.BrowserUtils.sleep;
@@ -39,16 +44,38 @@ public class ContactsFunctionality_StepDefinitions {
     @When("User enters  {string} in {string}.")
     public void user_enters_in(String string, String string2) {
         //contactsPage.NewContact_CompanyBox.click();
-        InbutBoxGenerator.pass_the_value(string, string2);
+        //InbutBoxGenerator.pass_the_value(string, string2);
+        contactsPage.NewContact_CompanyBox.sendKeys(string);
+        BrowserUtils.sleep(5);
     }
+
+    @When("User enters2  {string} in {string}.")
+    public void user_enters2_in(String string, String string2) {
+        contactsPage.NewContact_TitleBox.sendKeys(string + Keys.ENTER);
+        BrowserUtils.sleep(5);
+    }
+
     @Then("User should see {string} and {string} in the All contacts list.")
     public void user_should_see_and_in_the_all_contacts_list(String name, String surname) {
 
-        System.out.println(contactsPage.ContactsList.getAttribute("innerText"));
-        Assert.assertTrue(contactsPage.ContactsList.getAttribute("innerText").contains(name.toLowerCase()));
+        try{
+            int x = Integer.valueOf(contactsPage.ContactsList.getAttribute("childElementCount"));
+            List<String> listContacts = new ArrayList<>();
+            while(x > 0){
+                String a ="//div[@class='vue-recycle-scroller__item-wrapper']/div[" + String.valueOf(x) +"]";
+                String b = Driver.getDriver().findElement(By.xpath(a)).getText();
+                listContacts.add(b);
+                x--;
+            }
+            Boolean result = false;
+            for (String contact : listContacts) {
+                if(contact.equalsIgnoreCase(name)){result = true;}else{result= false;}
+            }
+            Assert.assertTrue(result);
+        }catch (RuntimeException e){
+            System.out.println("There is no any contact");
+        }
         //System.out.println(contactsPage.ContactsList.getAttribute("childElementCount"));
-
-
     }
 
     @When("User returns dashboard page.")
@@ -149,6 +176,7 @@ public class ContactsFunctionality_StepDefinitions {
     }
 
     int x = 0; // for the following step definition
+    String selected_contact_text ="";
     @Given("User chooses any contact in the list.")
     public void user_chooses_any_contact_in_the_list() {
 
@@ -157,6 +185,7 @@ public class ContactsFunctionality_StepDefinitions {
             System.out.println("x_first = " + x);
             Random rand = new Random();
             x = rand.nextInt(x);
+            if(x == 0){x++;}
             System.out.println("x_random = " + x);
         }catch (RuntimeException e){
             System.out.println("there is no any contact to delete");
@@ -168,6 +197,8 @@ public class ContactsFunctionality_StepDefinitions {
             //   (//div[@class='app-content-list-item'])[3]
             String element_syntex = "(//div[@class='app-content-list-item'])[" + String.valueOf(x) + "]";
             Driver.getDriver().findElement(By.xpath(element_syntex)).click();
+            selected_contact_text = Driver.getDriver().findElement(By.xpath(element_syntex)).getText();
+            System.out.println("selected_contact_text = " + selected_contact_text);
         }
 
     }
@@ -182,8 +213,14 @@ public class ContactsFunctionality_StepDefinitions {
     }
     @Then("User should not see the selected contact in list.")
     public void user_should_not_see_the_selected_contact_in_list() {
-        int y =Integer.valueOf(contactsPage.ContactsList_items.getAttribute("childElementCount"));
-        Assert.assertFalse(x==y);
+        try{
+            int yeni =Integer.valueOf(contactsPage.ContactsList_items.getAttribute("childElementCount"));
+            Assert.assertFalse(x==yeni);
+        }catch (RuntimeException e){
+            System.out.println("There is no anh contact");
+            Assert.assertTrue(true);
+        }
+
     }
 
     String value3 ="";
