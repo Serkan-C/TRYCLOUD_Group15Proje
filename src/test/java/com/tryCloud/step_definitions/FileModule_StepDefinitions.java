@@ -71,7 +71,7 @@ public class FileModule_StepDefinitions {
     @When("User select file {string} From the list")
     public void userSelectFileFromTheList(String item) {
         BrowserUtils.sleep(3);
-        ButtonGenerator.click_the_button(item);
+        ButtonGenerator.click_the_button_File(item);
         actualFileName = item;
 
     }

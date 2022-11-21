@@ -100,7 +100,10 @@ public class FileModulePage extends BasePage  {
     public WebElement selectedItemFile4;
 
     @FindBy(xpath = "//tbody/tr//span[.='TestFolder2']/ancestor:: tr//label")
-    public WebElement selectedItemFolder;
+    public WebElement selectedItemFolder2;
+
+    @FindBy(xpath = "//tbody/tr//span[.='TestFolder1']/ancestor:: tr//label")
+    public WebElement selectedItemFolder1;
 
     @FindBy(xpath = "//table[@class='list-container  has-controls multiselect']//span[@id='selectedActionsList']")
     public WebElement actionsBtn;
