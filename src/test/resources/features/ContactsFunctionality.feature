@@ -1,4 +1,4 @@
-@TCLOUD-925 @fk
+@TCLOUD-925 @fk @Regression
 Feature:Contacts Module Functionality
   As a user, I should be able to create a new contact and edit/delete any contact under Contacts module
 
