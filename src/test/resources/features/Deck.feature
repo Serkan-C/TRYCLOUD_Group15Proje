@@ -1,4 +1,4 @@
-@Deck @TCLOUD-890
+@Deck @TCLOUD-890 @Regression
 Feature: Deck Module Functionality
 
   Background:
