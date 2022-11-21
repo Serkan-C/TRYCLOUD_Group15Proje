@@ -1,4 +1,4 @@
-@Calendar
+@Calendar @Regression
 Feature: 
   As a user, I should be able to see Daily-Weekly-Monthly calendar view and create a new event under the Calendar module
 
