@@ -4,7 +4,7 @@ Feature: Talk Module Functionality
   Background:
     Given the user is logged in
 
-  @TCLOUD-856
+  @TCLOUD-856 @smoke
   Scenario Outline: User can create a new conversation
     Given the user navigate the "talk" Module and click
     When user click "Plus Icon"
@@ -16,7 +16,7 @@ Feature: Talk Module Functionality
       | deneme3      |
       | deneme4      |
 
-  @TCLOUD-865
+  @TCLOUD-865 Qregression
   Scenario Outline: User can add any selected participant to any conversation
     Given the user navigate the "talk" Module and click
     When user select "<conversation>" from conversation list
