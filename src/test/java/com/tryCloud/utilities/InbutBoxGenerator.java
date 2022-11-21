@@ -43,14 +43,28 @@ public class InbutBoxGenerator{
             case "NewContact_Box":
                 contactsPage.NewContact_Box.click();
                 contactsPage.NewContact_Box.sendKeys(Value.toLowerCase() + Keys.ENTER);
+                break;
 
             // Contacts Page's Input Boxes above (furkan)
 
+                //new
 
 
         }
 
 
+    }
+
+    public static String get_attribute(String WebElement, String Attribute){
+
+        String value="";
+
+        switch (WebElement){
+
+            case "ContactAvatarPic":
+                value = contactsPage.ContactAvatarPic.getAttribute(Attribute);
+        }
+        return value;
     }
 
 

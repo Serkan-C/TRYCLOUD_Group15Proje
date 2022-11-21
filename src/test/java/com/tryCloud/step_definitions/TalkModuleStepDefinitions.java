@@ -70,6 +70,7 @@ public class TalkModuleStepDefinitions {
 
     @When("user click {string}")
     public void userClicks(String buttonName) {
+        BrowserUtils.waitFor(3);
         ButtonGenerator.click_the_button(buttonName);
 
     }
