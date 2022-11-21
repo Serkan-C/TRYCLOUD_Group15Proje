@@ -263,6 +263,9 @@ public class ButtonGenerator {
                 fileModulePage.selectedItemFolder.click();
                 break;
 
+            case "TestDeleteFolder":
+                fileModulePage.selectedItemForDelete.click();
+                break;
 
         }
     }

@@ -61,12 +61,12 @@ Feature: Upload/Edit/Delete File Module Functionality
 
   @TCLOUD-908
   Scenario Outline: User can delete any selected item from its three dots menu
-    When User select file "<item>" From the list
+    When User select folder "<item>" From the list
     And User clicks "Actions" with three dots icon
     And User select "Delete" from DropDown box
     Then User should see deleted "<item>" in "Deleted Files" folder
 
     Examples:
-      |item         |
-      |TestFolderDelete|
+      |item            |
+      |TestDeleteFolder|
 
