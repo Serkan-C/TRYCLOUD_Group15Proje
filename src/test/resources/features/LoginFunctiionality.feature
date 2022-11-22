@@ -1,10 +1,10 @@
-      @TCLOUD-724
+      @TCLOUD-724 @Regression
 Feature: As a user, I should be able to login so that I can land on the dashboard page.
 
   Background:
     Given User is already on the login page
 
-  @mylogin @TCLOUD-671
+  @mylogin @TCLOUD-671 
   Scenario: User can login with valid credentials click enter
     When User enter a valid username
     And User enter a valid password and click Enter key from keyboard
@@ -35,6 +35,8 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
     When User enter a valid username
     And User enter a invalid "<password>" and click Login Button
     Then Wrong username or password should be displayed
+    Then Wrong username or password should be displayed
+
     Examples:
       | password    |
       | EMPloyee123 |
