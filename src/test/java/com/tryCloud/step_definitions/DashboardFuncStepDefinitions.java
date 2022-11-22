@@ -18,33 +18,36 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User access the dashboard successfully")
-    public void user_access_the_dashboard_successfully() { //1
+    public void user_access_the_dashboard_successfully() {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Dashboard"));
 
     }
 
     @Then("User can see all modules on dashboard page")
-    public void user_can_see_all_modules_on_dashboard_page() { //1
+    public void user_can_see_all_modules_on_dashboard_page() {
         Assert.assertTrue(dashboardPage.modules.isDisplayed());
 
     }
 
     @Then("User can see Username on dashboard page")
+
+    public void userCanSeeUsernameOnDashboardPage() {
+
     public void userCanSeeUsernameOnDashboardPage() { //1
+
         Assert.assertTrue(dashboardPage.usernamePlace.getAttribute("title").equals("Employee85"));
 
     }
 
 
     @When("User clicks on Customize button")
-    public void user_clicks_on_customize_button() { //2.1
+    public void user_clicks_on_customize_button() {
         dashboardPage.customizeButton.click();
 
     }
 
     @And("User can see the status widgets and click on it")
-    public void userCanSeeTheStatusWidgetsAndClickOnIt() { // 2.1
-        //Assert.assertTrue(dashboardPage.statusWidges.isDisplayed());
+    public void userCanSeeTheStatusWidgetsAndClickOnIt() {
         dashboardPage.statusWidges.click();
 
 
@@ -52,7 +55,11 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User can select any of {string}")
+
+    public void userCanSelectAnyOf(String widget) {
+
     public void userCanSelectAnyOf(String widget) { //2.1
+
         String widgetXpath = "//div[@class='modal__content']//label[contains(.,'" + widget + "')]";
         WebElement widgetElement = Driver.getDriver().findElement(By.xpath(widgetXpath));
         widgetElement.click();
@@ -62,7 +69,11 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can see the background images")
+
+    public void user_can_see_the_background_images() {
+
     public void user_can_see_the_background_images() { //2.2
+
         BrowserUtils.waitFor(5);
         Assert.assertTrue(dashboardPage.backgroundImage.isDisplayed());
 
@@ -70,7 +81,11 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User can select any of {string} from Images")
+
+    public void userCanSelectAnyOfFromImages(String imageName) {
+
     public void userCanSelectAnyOfFromImages(String imageName) { //2.2
+
         String imageXpath = "//div[@class='background-selector']//button[contains(.,'" + imageName + "')]";
         WebElement imageElement = Driver.getDriver().findElement(By.xpath(imageXpath));
         imageElement.click();
@@ -79,6 +94,11 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can click on Set Status button")
+
+    public void user_can_click_on_set_status_button() {
+       dashboardPage.setStatusButton.click();
+
+
     public void user_can_click_on_set_status_button() { //3
        dashboardPage.setStatusButton.click();
 
@@ -97,17 +117,23 @@ public class DashboardFuncStepDefinitions {
 
 
 
+
     }
 
     @When("User can see the Online status options")
+
+    public void user_can_see_the_online_status_options() {
+        BrowserUtils.waitFor(3);
+
     public void user_can_see_the_online_status_options() { //3
+
         Assert.assertTrue(dashboardPage.onlineStatus.isDisplayed());
 
 
     }
 
     @Then("user can select any of {string} from status")
-    public void userCanSelectAnyOfFromStatus(String status) { //3
+    public void userCanSelectAnyOfFromStatus(String status) {
         String statusXpath = "//div[@class='set-status-modal']//label[contains(.,'" + status + "')]";
         WebElement statusElement = Driver.getDriver().findElement(By.xpath(statusXpath));
         statusElement.click();
@@ -117,7 +143,11 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can see the Status messages")
+
+    public void user_can_see_the_status_messages() {
+
     public void user_can_see_the_status_messages() { //3.1
+
         BrowserUtils.waitFor(2);
         Assert.assertTrue(dashboardPage.statusMessages.isDisplayed());
 
@@ -126,7 +156,7 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User can select any of {string} from messages")
-    public void userCanSelectAnyOfFromMessages(String statusMessage) { //3.1
+    public void userCanSelectAnyOfFromMessages(String statusMessage) {
         String statusMesXpath = "//div[@class='set-status-modal']//span[contains(.,'" +statusMessage+ "')]";
         WebElement statusMesElement = Driver.getDriver().findElement(By.xpath(statusMesXpath));
         statusMesElement.click();
@@ -134,8 +164,10 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User clicks the Clear status message button")
-    public void user_clicks_the_clear_status_message_button() { //3.2
+    public void user_clicks_the_clear_status_message_button() {
         dashboardPage.clearStatusMessage.click();
+
+
 
 
        /* String expectedClearStatus = "Clear status message";
@@ -150,25 +182,26 @@ public class DashboardFuncStepDefinitions {
 
 
 
+
             }
 
 
     @Then("User can see his selections on dashboard after these steps")
-    public void userCanSeeHisSelectionsOnDashboardAfterTheseSteps() { //3.2
+    public void userCanSeeHisSelectionsOnDashboardAfterTheseSteps() {
         Assert.assertTrue(dashboardPage.dashBoard.isDisplayed());
 
     }
 
 
     @And("User can write any {string} in input box manually")
-    public void userCanWriteAnyInInputBoxManually(String string) { //4
+    public void userCanWriteAnyInInputBoxManually(String string) {
         dashboardPage.inputBox.sendKeys(string);
 
 
     }
 
     @Then("User can click the Set status message button and see the status on dashboard")
-    public void user_can_click_the_set_status_message_button_and_see_the_status_on_dashboard() { //4
+    public void user_can_click_the_set_status_message_button_and_see_the_status_on_dashboard() {
         dashboardPage.setStatusMessage.click();
 
     }
