@@ -13,8 +13,8 @@ Feature: Talk Module Functionality
     Then user created  "<conversation>" conversation and is on this conversation page
     Examples:
       | conversation |
-      | deneme1      |
-      | deneme2      |
+      | deneme3      |
+      | deneme4      |
 
   @TCLOUD-865
   Scenario Outline: User can add any selected participant to any conversation
@@ -26,7 +26,7 @@ Feature: Talk Module Functionality
     Then user see added participant "<participant>" in the conversation box
     Examples:
       | conversation | participant |
-      | cydeo3       | Employee104 |
+      | deneme4       | Employee104 |
 
   @TCLOUD-868
   Scenario: Display all conversation list under the Talk module
@@ -34,17 +34,31 @@ Feature: Talk Module Functionality
     When user click "Menu Button"
     Then user see "all conversation"
 
-  @TCLOUD-870
+  @TCLOUD-870 @mywip
   Scenario Outline: User can start a call with any participant and leave the call
     Given the user navigate the "talk" Module and click
     When user select "Menu Button"
     When user select "<conversation>" from conversation list
-    When user click "Start Call"
+    When user click "Start Call" and click accept
     When user click "Leave Call"
     Examples:
       | conversation |
       | cydeo2       |
 
+
+
+
+@TCLOUD-875
+  Scenario Outline: User can promote any participant to moderator
+    Given the user navigate the "talk" Module and click
+    When user select "<conversation>" from conversation list
+    When user click "participant Icon"
+    Then user click "<participant>" participant menu button
+    Then user click "Promote to Moderator Button"
+
+    Examples:
+      | conversation | participant |
+      | deneme4       | Employee104 |
 
   @TCLOUD-873
   Scenario Outline: User can delete a conversation
@@ -56,20 +70,6 @@ Feature: Talk Module Functionality
 
     Examples:
       | conversation |
-      | deneme1      |
-      | deneme2      |
-
-@TCLOUD-875 @mywip
-  Scenario Outline: User can promote any participant to moderator
-    Given the user navigate the "talk" Module and click
-    When user select "<conversation>" from conversation list
-    When user click "participant Icon"
-    Then user click "<participant>" participant menu button
-    Then user click "Promote to Moderator Button"
-
-    Examples:
-      | conversation | participant |
-      | cydeo1       | Employee102 |
-
-
+      | deneme3      |
+      | deneme4      |
 
