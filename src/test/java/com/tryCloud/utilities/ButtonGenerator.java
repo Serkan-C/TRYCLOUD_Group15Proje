@@ -48,7 +48,6 @@ public class ButtonGenerator {
         contactsPage = null;
         fileModulePage = null;
         deckPage = null;
-        
     }
 
     public static void setCompenent() {
@@ -252,18 +251,33 @@ public class ButtonGenerator {
         }
 
     }
-    public static void click_the_button_File(String buttonName) {
+    public static void click_the_button_File(String buttonNameTest) {
         setCompenent();
-        switch (buttonName) {
+        switch (buttonNameTest) {
 
             case "eye button":
                 loginPage.eyeIMG.click();
                 break;
 
-            case "TestFolder2":
-                fileModulePage.selectedItemFolder.click();
+            case "TestFolder1":
+                fileModulePage.selectedItemFolder1.click();
                 break;
 
+            case "TestFolder2":
+                fileModulePage.selectedItemFolder2.click();
+                break;
+
+            case "testFile1.jpg":
+                fileModulePage.selectedItemFile1.click();
+                break;
+
+            case "testFile4.jpg":
+                fileModulePage.selectedItemFile4.click();
+                break;
+
+            case "TestDeleteFolder":
+                fileModulePage.selectedItemForDelete.click();
+                break;
 
         }
     }

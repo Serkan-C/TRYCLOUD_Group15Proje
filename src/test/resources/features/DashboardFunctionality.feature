@@ -1,4 +1,4 @@
-@TCLOUD-898
+@TCLOUD-898 @Regression
 Feature: Dashboard Functionality
 
   Background: As a user I should be able to modify Dashboard page
@@ -41,7 +41,11 @@ Feature: Dashboard Functionality
       | Away |
 
 @TCLOUD-895
+
   Scenario Outline: User can see the Status messages and select any of them
+
+  Scenario Outline: User can see the Status messages and select any of them  (3.1)
+
     When user clicks Set Status button
     And User can see the Status messages
     Then User can select any of "<status messages>" from messages
@@ -51,11 +55,15 @@ Feature: Dashboard Functionality
       | In a meeting  |
       | Vacationing   |
 
+
 @TCLOUD-927
   Scenario: User can click on Set Status button and Clear the status message
     When user click "Set Status button"
     And user click "Clear status message"
     Then User can see his selections on dashboard after these steps
+
+
+
 
 
 @TCLOUD-897

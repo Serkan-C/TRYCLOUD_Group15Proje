@@ -1,4 +1,4 @@
-@TCLOUD-909
+@TCLOUD-909 @Regression
 Feature: Upload/Edit/Delete File Module Functionality
 
   User Story :
@@ -67,6 +67,6 @@ Feature: Upload/Edit/Delete File Module Functionality
     Then User should see deleted "<item>" in "Deleted Files" folder
 
     Examples:
-      |item         |
-      |TestFolderDelete|
+      |item       |
+      |TestFolder1|
 

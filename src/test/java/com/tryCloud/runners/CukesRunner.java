@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
 
 
-        tags = "@TCLOUD-916"
+        tags = "@Regression "
 
 
 )

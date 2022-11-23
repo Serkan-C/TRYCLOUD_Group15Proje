@@ -1,5 +1,6 @@
 package com.tryCloud.pages;
 
+import com.tryCloud.utilities.BrowserUtils;
 import com.tryCloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,12 @@ public class FileModulePage extends BasePage  {
         if ("Files".equals(moduleName)) {
             fileModule.click();
         }
+    }
+
+
+    public void uploadFile1(String fileName){
+        uploadFileBtn.sendKeys((System.getProperty("user.dir") + "/src/test/java/com/tryCloud/files/"+fileName));;
+        BrowserUtils.waitFor(3);
     }
     public void uploadFile(String fileName) throws AWTException {
 
@@ -93,7 +100,10 @@ public class FileModulePage extends BasePage  {
     public WebElement selectedItemFile4;
 
     @FindBy(xpath = "//tbody/tr//span[.='TestFolder2']/ancestor:: tr//label")
-    public WebElement selectedItemFolder;
+    public WebElement selectedItemFolder2;
+
+    @FindBy(xpath = "//tbody/tr//span[.='TestFolder1']/ancestor:: tr//label")
+    public WebElement selectedItemFolder1;
 
     @FindBy(xpath = "//table[@class='list-container  has-controls multiselect']//span[@id='selectedActionsList']")
     public WebElement actionsBtn;

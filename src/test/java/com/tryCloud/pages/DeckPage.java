@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DeckPage extends BasePage{
 
 
@@ -54,4 +56,13 @@ public class DeckPage extends BasePage{
 
     @FindBy(xpath = "//*[contains(text(),'Assign a tag to this card…')]/..")
     public WebElement inputBoxTag;
+
+    @FindBy(xpath = "//*[@class='app-navigation-entry__children']//*[@class='icon action-item__menutoggle action-item__menutoggle--default-icon']")
+    public List<WebElement> Decks;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete board')]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//button[.='Delete']")
+    public WebElement deleteButtonConfirm;
 }
