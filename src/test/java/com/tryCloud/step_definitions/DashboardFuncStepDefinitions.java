@@ -30,11 +30,7 @@ public class DashboardFuncStepDefinitions {
     }
 
     @Then("User can see Username on dashboard page")
-
     public void userCanSeeUsernameOnDashboardPage() {
-
-    public void userCanSeeUsernameOnDashboardPage() { //1
-
         Assert.assertTrue(dashboardPage.usernamePlace.getAttribute("title").equals("Employee85"));
 
     }
@@ -55,11 +51,7 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User can select any of {string}")
-
     public void userCanSelectAnyOf(String widget) {
-
-    public void userCanSelectAnyOf(String widget) { //2.1
-
         String widgetXpath = "//div[@class='modal__content']//label[contains(.,'" + widget + "')]";
         WebElement widgetElement = Driver.getDriver().findElement(By.xpath(widgetXpath));
         widgetElement.click();
@@ -69,11 +61,7 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can see the background images")
-
     public void user_can_see_the_background_images() {
-
-    public void user_can_see_the_background_images() { //2.2
-
         BrowserUtils.waitFor(5);
         Assert.assertTrue(dashboardPage.backgroundImage.isDisplayed());
 
@@ -81,11 +69,7 @@ public class DashboardFuncStepDefinitions {
 
 
     @Then("User can select any of {string} from Images")
-
     public void userCanSelectAnyOfFromImages(String imageName) {
-
-    public void userCanSelectAnyOfFromImages(String imageName) { //2.2
-
         String imageXpath = "//div[@class='background-selector']//button[contains(.,'" + imageName + "')]";
         WebElement imageElement = Driver.getDriver().findElement(By.xpath(imageXpath));
         imageElement.click();
@@ -94,39 +78,14 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can click on Set Status button")
-
     public void user_can_click_on_set_status_button() {
        dashboardPage.setStatusButton.click();
-
-
-    public void user_can_click_on_set_status_button() { //3
-       dashboardPage.setStatusButton.click();
-
-
-       /* String expectedStatus = "status";
-        String status =  Driver.getDriver().findElement(By.xpath("//div[@id='status-status']")).getText();
-
-        if (expectedStatus.equalsIgnoreCase(status)) {
-            dashboardPage.setStatusButton.click();
-        }else{
-            System.out.println("The expected result doesn't match the actual result");
-
-        }
-
-        */
-
-
-
 
     }
 
     @When("User can see the Online status options")
-
     public void user_can_see_the_online_status_options() {
         BrowserUtils.waitFor(3);
-
-    public void user_can_see_the_online_status_options() { //3
-
         Assert.assertTrue(dashboardPage.onlineStatus.isDisplayed());
 
 
@@ -143,12 +102,8 @@ public class DashboardFuncStepDefinitions {
 
 
     @When("User can see the Status messages")
-
     public void user_can_see_the_status_messages() {
-
-    public void user_can_see_the_status_messages() { //3.1
-
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(5);
         Assert.assertTrue(dashboardPage.statusMessages.isDisplayed());
 
     }
@@ -168,22 +123,7 @@ public class DashboardFuncStepDefinitions {
         dashboardPage.clearStatusMessage.click();
 
 
-
-
-       /* String expectedClearStatus = "Clear status message";
-        String clearStatus = Driver.getDriver().findElement(By.xpath("//button[@class='status-buttons__select']")).getText();
-
-        if (expectedClearStatus.equalsIgnoreCase(clearStatus)) {
-          dashboardPage.clearStatusMessage.isSelected();
-        }else{
-            System.out.println("The expected result doesn't match the actual result");
-
-        */
-
-
-
-
-            }
+    }
 
 
     @Then("User can see his selections on dashboard after these steps")
