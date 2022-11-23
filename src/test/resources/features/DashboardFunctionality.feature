@@ -41,11 +41,7 @@ Feature: Dashboard Functionality
       | Away |
 
 @TCLOUD-895
-
-  Scenario Outline: User can see the Status messages and select any of them
-
-  Scenario Outline: User can see the Status messages and select any of them  (3.1)
-
+Scenario Outline: User can see the Status messages and select any of them
     When user clicks Set Status button
     And User can see the Status messages
     Then User can select any of "<status messages>" from messages
@@ -61,9 +57,6 @@ Feature: Dashboard Functionality
     When user click "Set Status button"
     And user click "Clear status message"
     Then User can see his selections on dashboard after these steps
-
-
-
 
 
 @TCLOUD-897
