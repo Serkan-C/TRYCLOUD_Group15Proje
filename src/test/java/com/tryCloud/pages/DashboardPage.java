@@ -11,35 +11,29 @@ public class DashboardPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//span[@class='user-status-menu-item__header']")
-    public WebElement usernameStatus;
+    @FindBy(xpath = "//div[@class='header-left']")
+    public WebElement modules;
+
+    @FindBy(xpath = "//*[@id=\"expanddiv\"]/ul/li[1]/div/span")
+    public WebElement usernamePlace;
 
     @FindBy(xpath = "//a[@class='edit-panels icon-rename']")
     public WebElement customizeButton;
 
-    @FindBy(xpath = "//label[@class='icon-user-status-online']")
+    @FindBy(className = "icon-user-status-online")
     public WebElement statusWidges;
 
-    @FindBy(xpath = "//label[@class='icon-weather-status']")
-    public WebElement weather;
-
-    @FindBy(xpath = "//div[@class='background-selector']")
+    @FindBy(xpath = "//div[@class='modal__content']")
     public WebElement backgroundImage;
 
-    @FindBy(xpath = "//button[@href ='#']")
+    @FindBy(id= "status-status")
     public WebElement setStatusButton;
 
-    @FindBy(xpath = "//div[@class ='set-status-modal__header']")
+    @FindBy(xpath = "//div[@class='set-status-modal__online-status']")
     public WebElement onlineStatus;
 
-    @FindBy(xpath = "//label[@class ='user-status-online-select__label icon-user-status-dnd']")
-    public WebElement doNotDisturb;
-
-    @FindBy(xpath = "//div[@class ='set-status-modal__header']")
-    public WebElement statusMessageHeader;
-
-    @FindBy(xpath = "//span[@class='predefined-status__message']")
-    public WebElement statusMessage;
+    @FindBy(xpath = "//div[@class='set-status-modal']")
+    public WebElement statusMessages;
 
     @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
     public WebElement setStatusMessage;
@@ -47,8 +41,13 @@ public class DashboardPage {
     @FindBy(xpath = "//button[@class='status-buttons__select']")
     public WebElement clearStatusMessage;
 
-    @FindBy(xpath = "//input[@type='text']")
-    public WebElement ownStatus;
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[6]/div[2]/div/div/div[4]/form/input")
+    public WebElement inputBox;
+
+    @FindBy(id = "app-dashboard")
+    public WebElement dashBoard;
+
+
 
 
 

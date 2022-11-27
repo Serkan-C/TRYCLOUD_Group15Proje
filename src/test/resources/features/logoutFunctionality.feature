@@ -1,4 +1,4 @@
-@TCLOUD-741
+@TCLOUD-741 @Regression
 Feature: Log out Functionality-As a user, I should be able to log out.
 
   Background:
