@@ -97,6 +97,7 @@ public class CalendarStepDefinitions {
 
     @Then("user can see {string} in the Monthly Calendar view")
     public void userCanSeeInTheMonthlyCalendarView(String eventName) {
+        BrowserUtils.sleep(2);
         String xpath = "//*[contains(text(),'" + eventName + "')]";
         WebElement event1 = Driver.getDriver().findElement(By.xpath(xpath));
         Assert.assertTrue(event1.isDisplayed());
