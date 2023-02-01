@@ -68,7 +68,7 @@ public class DeletedFilesTabStepDefinitions {
 
     @Then("User should click the deleted button with the arrow pointing up for order by oldest to newest")
     public void userShouldClickTheDeletedButtonWithTheArrowPointingUpForOrderByOldestToNewest() {
-        BrowserUtils.waitForPageToLoad(60);
+        BrowserUtils.waitForPageToLoad(60);//
         deletedFilesTabPage.DeletedButton.click();
         BrowserUtils.sleep(1);
         if(true){
