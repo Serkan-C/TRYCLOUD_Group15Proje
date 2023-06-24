@@ -41,6 +41,7 @@ access to the object of this class from outside the class
                 case "chrome":
 
                     ChromeOptions options = new ChromeOptions();
+                    options.addArguments("disable-notifications");
                     HashMap<String,Integer> contentSetting=new HashMap<String,Integer>();
                     HashMap<String,Object> profile=new HashMap<String, Object>();
                     HashMap<String,Object> prefs=new HashMap<String, Object>();

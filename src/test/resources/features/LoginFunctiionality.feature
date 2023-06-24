@@ -2,12 +2,13 @@
 Feature: As a user, I should be able to login so that I can land on the dashboard page.
 
   Background:
-    Given User is already on the login page
+    Given User is already on the "google" page
 
   @mylogin @TCLOUD-671 
   Scenario: User can login with valid credentials click enter
-    When User enter a valid username
-    And User enter a valid password and click Enter key from keyboard
+    When User enter a  "Employee85" as username
+    And User enter a  "Employee123" as a password
+    And user click Enter key from keyboard
     Then User successfully login on the dashboard page
 
   @mylogin @TCLOUD-672
@@ -20,7 +21,7 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
   @mylogin @TCLOUD-673
 
   Scenario Outline: User can not login with  invalid username
-    When User enter invalid "<username>"
+    When User enter a  "<username>" as username
     And User enter a valid password and click Login Button
     Then Wrong username or password should be displayed
     Examples:
@@ -47,7 +48,7 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
   @mylogin @TCLOUD-675
 
   Scenario: User can not login without username
-    When username is empty
+    When User enter a  "" as username
     And User enter a valid password and click Login Button
     Then Please fill out this field should be displayed
 
@@ -61,7 +62,7 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
   @mylogin  @TCLOUD-678
 
   Scenario: User can not login with any invalid credentials
-    When username is empty
+    When User enter a  "" as username
     And Password is empty and click Login Button
     Then Please fill out this field should be displayed
 
@@ -80,7 +81,7 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
   @mylogin @TCLOUD-688
   Scenario Outline: User can see the password explicitly if needed
     When User types any "<password>" in the password input box
-    And User clicks eye button in the password input box
+    And User clicks "eye button"
     Then User see the password explicitly
 
     Examples:
@@ -90,7 +91,7 @@ Feature: As a user, I should be able to login so that I can land on the dashboar
       | developer   |
       | tester12    |
 
-   @TCLOUD-692
+  @TCLOUD-692
   Scenario: User can see the "Forgot password?" link on the login page and
   can see the "Reset Password" button on the next page after clicking on forget password link
 
